@@ -8,4 +8,9 @@ class Auth extends BaseController
     {
         return view('Layout/loginHeader') . view('auth/Login') . view('Layout/loginFooter');
     }
+
+    public function register()
+    {
+        return view('Layout/loginHeader') . view('auth/Register') . view('Layout/loginFooter');
+    }
 }
