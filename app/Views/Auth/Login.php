@@ -10,7 +10,7 @@
             <div class="card mb-0">
               <div class="card-body">
                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <img src="./assets/images/logos/Logo.png" alt="" class="img-fluid" style="max-width: 120px;">
+                  <img src="<?= base_url('assets/images/logos/Logo.png') ?>" alt="" class="img-fluid" style="max-width: 120px;">
                 </a>
                 <h3 class="text-center">Login</h3>
 
