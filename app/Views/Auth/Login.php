@@ -10,28 +10,39 @@
             <div class="card mb-0">
               <div class="card-body">
                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <!-- <img src="./assets/images/logos/logo.svg" alt=""> -->
+                  <img src="./assets/images/logos/Logo.png" alt="" class="img-fluid" style="max-width: 120px;">
                 </a>
                 <h3 class="text-center">Login</h3>
-                <form>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between mb-4">
-                    <a class="text-primary fw-bold" href="./index.html">Forgot Password ?</a>
-                  </div>
-                  <a href="./index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</a>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <a href="<?= base_url('register') ?>" class="text-primary fw-bold ms-2">
+
+                <?php if (session()->getFlashdata('error')) : ?>
+                <div class="alert alert-danger">
+                  <?= session()->getFlashdata('error') ?>
+                </div>
+              <?php endif ?>
+              
+                <form action="<?= base_url('login') ?>" method="post">
+                <?= csrf_field() ?>
+
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">
+                  Sign In
+                </button>
+
+                <div class="d-flex align-items-center justify-content-center">
+                  <a href="<?= base_url('register') ?>" class="text-primary fw-bold ms-2">
                     Create an account
-                    </a>                  
-                  </div>
-                </form>
+                  </a>
+                </div>
+              </form>
               </div>
             </div>
           </div>
