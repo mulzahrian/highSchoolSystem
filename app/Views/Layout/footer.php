@@ -5,6 +5,13 @@
   <script src="<?= base_url('assets/libs/simplebar/dist/simplebar.js') ?>"></script>
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+  <script src="https://cdn.ckeditor.com/4.22.0/standard/ckeditor.js"></script>
+
+<script>
+  CKEDITOR.replace('historyEditor');
+</script>
+
 </body>
 
 </html>

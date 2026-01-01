@@ -45,50 +45,49 @@
     <div class="card">
       <div class="card-body">
         <!-- Header Name -->
-        <h5 class="card-title fw-semibold mb-4">Sejarah</h5>
+        <h5 class="card-title fw-semibold mb-4">Visi Misi</h5>
 
         <!-- 🔥 ISI DI SINI SAJA YANG DIGANTI 🔥 -->
         <!-- TABLE -->
           <div class="card-body">
-            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addHistoryModal">
-              + Add History
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addvissionMissionModal">
+              + Add Visi Misi
             </button>
 
-            <table id="historyTable" class="table table-bordered table-striped">
+            <table id="visiTable" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Image</th>
-                  <th>History</th>
+                  <th>Type</th>
+                  <th>Content</th>
                   <th>Created At</th>
                   <th width="120">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <?php if ($history): ?>
-                  <tr>
-                    <td>
-                      <?php if (!empty($history['image'])): ?>
-                        <img src="<?= base_url('uploads/' . $history['image']) ?>" width="80">
-                      <?php endif ?>
-                    </td>
-                    <td><?= esc($history['history']) ?></td>
-                    <td><?= esc($history['created_at']) ?></td>
-                    <td>
-                      <a href="<?= base_url('menu/delete/' . $history['history_id']) ?>"
-                        class="btn btn-danger btn-sm"
-                        onclick="return confirm('Delete this data?')">
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                <?php else: ?>
-                  <tr>
-                    <td colspan="4" class="text-center text-muted">
-                      No data available
-                    </td>
-                  </tr>
-                <?php endif ?>
-              </tbody>
+  <?php if (!empty($vision_mission)): ?>
+    <?php foreach ($vision_mission as $row): ?>
+      <tr>
+        <td><?= esc($row['type']) ?></td>
+        <td><?= esc($row['content']) ?></td>
+        <td><?= esc($row['created_at']) ?></td>
+        <td>
+          <a href="<?= base_url('menu/delete/' . $row['id']) ?>"
+             class="btn btn-danger btn-sm"
+             onclick="return confirm('Delete this data?')">
+            Delete
+          </a>
+        </td>
+      </tr>
+    <?php endforeach ?>
+  <?php else: ?>
+    <tr>
+      <td colspan="4" class="text-center text-muted">
+        No data available
+      </td>
+    </tr>
+  <?php endif ?>
+</tbody>
+
             </table>
           </div>
         <!-- end value -->
@@ -99,26 +98,30 @@
 </div>
 
 <!-- MODAL ADD HISTORY -->
-<div class="modal fade" id="addHistoryModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="addvissionMissionModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title fw-semibold">Add History</h5>
+        <h5 class="modal-title fw-semibold">Add Visi Misi</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
-      <form action="<?= base_url('menu/store') ?>" method="post" enctype="multipart/form-data">
+      <form action="<?= base_url('vision-mission/add') ?>" method="post" enctype="multipart/form-data">
         <div class="modal-body">
 
           <div class="mb-3">
-            <label class="form-label">Image</label>
-            <input type="file" name="image" class="form-control">
+            <label class="form-label">Type</label>
+            <select name="type" class="form-select" required>
+              <option value="">-- Pilih Type --</option>
+              <option value="visi">Visi</option>
+              <option value="misi">Misi</option>
+            </select>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">History</label>
-            <textarea name="history" id="historyEditor" class="form-control" rows="6"></textarea>
+            <label class="form-label">Content</label>
+            <textarea name="content" id="historyEditor" class="form-control" rows="6"></textarea>
           </div>
 
         </div>
