@@ -45,40 +45,41 @@
     <div class="card">
       <div class="card-body">
 
-        <h5 class="card-title fw-semibold mb-4">Profile Teacher</h5>
+        <h5 class="card-title fw-semibold mb-4">Announcement</h5>
 
-        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
-          + Add Teacher
+        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+          + Add Announcement
         </button>
 
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>Photo</th>
-              <th>Name</th>
-              <th>Role</th>
-              <th>Detail</th>
+              <th>Thumbnail</th>
+              <th>Year</th>
+              <th>Content</th>
+              <th>Status</th>
               <th>Created At</th>
               <th width="120">Action</th>
             </tr>
           </thead>
           <tbody>
-            <?php if (!empty($teachers)): ?>
-              <?php foreach ($teachers as $row): ?>
+            <?php if (!empty($announcements)): ?>
+              <?php foreach ($announcements as $row): ?>
                 <tr>
                   <td>
-                    <img src="<?= base_url('uploads/teacher/' . $row['image']) ?>"
-                         width="80"
-                         class="img-thumbnail">
+                    <?php if ($row['thumbnail']): ?>
+                      <img src="<?= base_url('uploads/announcement/' . $row['thumbnail']) ?>"
+                           width="80" class="img-thumbnail">
+                    <?php endif ?>
                   </td>
-                  <td><?= esc($row['name']) ?></td>
-                  <td><?= esc($row['role']) ?></td>
-                  <td><?= esc($row['detail']) ?></td>
+                  <td><?= esc($row['year']) ?></td>
+                  <td><?= character_limiter(strip_tags($row['content']), 80) ?></td>
+                  <td><?= $row['is_active'] ? 'Active' : 'Inactive' ?></td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
-                    <a href="<?= base_url('profile-teacher/delete/' . $row['organization_id']) ?>"
+                    <a href="<?= base_url('announcement/delete/' . $row['announcement_id']) ?>"
                        class="btn btn-danger btn-sm"
-                       onclick="return confirm('Delete this teacher?')">
+                       onclick="return confirm('Delete this announcement?')">
                       Delete
                     </a>
                   </td>
@@ -86,9 +87,7 @@
               <?php endforeach ?>
             <?php else: ?>
               <tr>
-                <td colspan="6" class="text-center text-muted">
-                  No data available
-                </td>
+                <td colspan="6" class="text-center text-muted">No data</td>
               </tr>
             <?php endif ?>
           </tbody>
@@ -99,37 +98,37 @@
   </div>
 </div>
 
-<!-- MODAL ADD -->
-<div class="modal fade" id="addTeacherModal" tabindex="-1" data-bs-focus="false">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
+<!-- MODAL -->
+<div class="modal fade" id="addModal" tabindex="-1" data-bs-focus="false">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title fw-semibold">Add Teacher</h5>
+        <h5 class="modal-title fw-semibold">Add Announcement</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
-      <form action="<?= base_url('profile-teacher/add') ?>" method="post" enctype="multipart/form-data">
+      <form action="<?= base_url('announcement/add') ?>" method="post" enctype="multipart/form-data">
         <div class="modal-body">
 
           <div class="mb-3">
-            <label class="form-label">Photo</label>
-            <input type="file" name="image" class="form-control" accept="image/*" required>
+            <label class="form-label">Title</label>
+            <input type="text" name="year" class="form-control" placeholder="ex: Kelulusan Siswa" required>
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" required>
+            <label class="form-label">Thumbnail</label>
+            <input type="file" name="thumbnail" class="form-control">
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Role</label>
-            <input type="text" name="role" class="form-control" required>
+            <label class="form-label">Content</label>
+            <textarea name="content" id="historyEditor" class="form-control" rows="6"></textarea>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label">Detail</label>
-            <textarea name="detail" class="form-control" rows="4"></textarea>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_active" value="1" checked>
+            <label class="form-check-label">Active</label>
           </div>
 
         </div>

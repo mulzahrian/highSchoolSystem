@@ -99,7 +99,7 @@
 </div>
 
 <!-- MODAL ADD -->
-<div class="modal fade" id="addPlanModal" tabindex="-1">
+<div class="modal fade" id="addPlanModal" tabindex="-1" data-bs-focus="false">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
 

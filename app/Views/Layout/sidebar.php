@@ -151,12 +151,89 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('plan-strategic') ?>">
+                    href="<?= base_url('announcement') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
                       </div>
                       <span class="hide-menu">Pengumuman</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('academic-calender') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Kalender Akademik</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('ktsp') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">KOM</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('bimbingan-karir') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Bimbingan Karir dan Study Lanjut</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('academic-calender') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Pembelajaran Jarak Jauh</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('academic-calender') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">PTMT</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('academic-calender') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">SKS</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('academic-calender') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">UKBM</span>
                     </div>
                   </a>
                 </li>

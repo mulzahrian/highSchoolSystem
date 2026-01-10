@@ -51,6 +51,26 @@ $routes->get('plan-strategic', 'PlanStrategic::index');
 $routes->post('plan-strategic/add', 'PlanStrategic::add');
 $routes->get('plan-strategic/delete/(:num)', 'PlanStrategic::delete/$1');
 
+$routes->get('announcement', 'Announcement::index');
+$routes->post('announcement/add', 'Announcement::add');
+$routes->get('announcement/delete/(:num)', 'Announcement::delete/$1');
+
+$routes->get('academic-calender', 'AcademicCalender::index');
+$routes->post('academic-calender/add', 'AcademicCalender::add');
+$routes->get('academic-calender/delete/(:num)', 'AcademicCalender::delete/$1');
+
+$routes->get('ktsp', 'Ktsp::index');
+$routes->post('ktsp/add', 'Ktsp::add');
+$routes->get('ktsp/delete/(:num)', 'Ktsp::delete/$1');
+
+$routes->get('bimbingan-karir', 'BimbinganKarir::index');
+$routes->post('bimbingan-karir/add', 'BimbinganKarir::add');
+$routes->get('bimbingan-karir/delete/(:num)', 'BimbinganKarir::delete/$1');
+
+
+
+
+
 
 
 
