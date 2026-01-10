@@ -43,6 +43,16 @@ $routes->get('profile-infrastructure', 'ProfileInfrastructure::index');
 $routes->post('profile-infrastructure/add', 'ProfileInfrastructure::add');
 $routes->get('profile-infrastructure/delete/(:num)', 'ProfileInfrastructure::delete/$1');
 
+$routes->get('news', 'News::index');
+$routes->post('news/add', 'News::add');
+$routes->get('news/delete/(:num)', 'News::delete/$1');
+
+$routes->get('plan-strategic', 'PlanStrategic::index');
+$routes->post('plan-strategic/add', 'PlanStrategic::add');
+$routes->get('plan-strategic/delete/(:num)', 'PlanStrategic::delete/$1');
+
+
+
 
 
 
