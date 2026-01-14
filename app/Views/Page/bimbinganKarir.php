@@ -45,16 +45,16 @@
     <div class="card">
       <div class="card-body">
 
-        <h5 class="card-title fw-semibold mb-4">Bimbingan Karir</h5>
+        <h5 class="card-title fw-semibold mb-4">Akuntabilitas</h5>
 
         <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
-          + Add Bimbingan Karir
+          + Add Akuntabilitas
         </button>
 
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>Image</th>
+              <th>File</th>
               <th>Title</th>
               <th>Content</th>
               <th>Status</th>
@@ -102,7 +102,9 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title fw-semibold">Add Bimbingan Karir</h5>
+        <!-- <h5 class="modal-title fw-semibold">Add Bimbingan Karir</h5> -->
+        <h5 class="modal-title fw-semibold">Akuntabilitas</h5>
+
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
@@ -115,7 +117,7 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Image</label>
+            <label class="form-label">Upload</label>
             <input type="file" name="image" class="form-control" required>
           </div>
 

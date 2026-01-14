@@ -238,6 +238,268 @@
                   </a>
                 </li>
           </ul>
+          <li class="sidebar-item">
+              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-layout-grid"></i>
+                  </span>
+                  <span class="hide-menu">ZONA INTEGRITAS</span>
+                </div>
+              </a>
+              <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('bimbingan-karir') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Akuntabilitas</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('vision-mission') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Relasi Belanja</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('organization-structure') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Budaya Kerja</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-teacher') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Zona Integritas - Eviden</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-location') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Lokasi</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-teacher-detail') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-circle"></i>
+                      </div>
+                      <span class="hide-menu">Pelayahan Publik</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-infrastructure') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">PPID</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-layout-grid"></i>
+                  </span>
+                  <span class="hide-menu">PTSP</span>
+                </div>
+              </a>
+              <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('menu') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">TRACAT</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('organization-structure') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Maklumat Layanan</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('organization-structure') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Alur Pelayanan Tamu</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-teacher') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Alur Izin Penelitian</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-location') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Legalisasi Dokument</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-teacher-detail') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-circle"></i>
+                      </div>
+                      <span class="hide-menu">Mutasi Siswa</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('profile-infrastructure') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Survei Kepuasan Masyarakat</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-layout-grid"></i>
+                  </span>
+                  <span class="hide-menu">PPDP</span>
+                </div>
+              </a>
+              <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('menu') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">PPDP</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('vision-mission') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">PENGUMUMAN PPDP</span>
+                    </div>
+                    
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-layout-grid"></i>
+                  </span>
+                  <span class="hide-menu">Agen Perubahan</span>
+                </div>
+              </a>
+              <ul aria-expanded="false" class="collapse first-level">
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('menu') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Peningkatan Bahasa Asing</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('vision-mission') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Program Literasi</span>
+                    </div>
+                    
+                  </a>
+                </li>
+              </ul>
+            </li>
         </nav>
         <!-- End Sidebar navigation -->
       </div>

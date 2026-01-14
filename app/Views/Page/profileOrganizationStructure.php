@@ -45,16 +45,16 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4">Organization Structure</h5>
+        <h5 class="card-title fw-semibold mb-4">Maklumat Layanan</h5>
 
         <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addOrgModal">
-          + Add Structure
+          + Add Maklumat Layanan
         </button>
 
         <table class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>Image</th>
+              <th>File</th>
               <th>Created At</th>
               <th width="120">Action</th>
             </tr>
@@ -99,14 +99,14 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title fw-semibold">Add Organization Structure</h5>
+        <h5 class="modal-title fw-semibold">Add Maklumat Layanan</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <form action="<?= base_url('organization-structure/add') ?>" method="post" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="mb-3">
-            <label class="form-label">Image</label>
+            <label class="form-label">File</label>
             <input type="file" name="image" class="form-control" accept="image/*" required>
           </div>
         </div>
