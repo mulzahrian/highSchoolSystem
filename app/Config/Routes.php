@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+$routes->get('/', 'Home::index');
 $routes->get('/', 'Auth::index');
 $routes->get('/auth', 'Auth::index');
 $routes->get('/register', 'Auth::register');
@@ -66,6 +67,11 @@ $routes->get('ktsp/delete/(:num)', 'Ktsp::delete/$1');
 $routes->get('bimbingan-karir', 'BimbinganKarir::index');
 $routes->post('bimbingan-karir/add', 'BimbinganKarir::add');
 $routes->get('bimbingan-karir/delete/(:num)', 'BimbinganKarir::delete/$1');
+
+$routes->get('opening', 'Opening::index');
+$routes->post('opening/add', 'Opening::add');
+$routes->get('opening/delete/(:num)', 'Opening::delete/$1');
+
 
 
 

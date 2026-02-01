@@ -33,6 +33,16 @@
               <ul aria-expanded="false" class="collapse first-level">
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('opening') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Pembukaan</span>
+                    </div>
+                  </a>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
                     href="<?= base_url('menu') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
