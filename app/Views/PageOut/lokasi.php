@@ -1,65 +1,68 @@
 
   <main class="main">
-    <!-- Recent News Section -->
-    <section id="recent-news" class="recent-news section">
+    <style>
+.lokasi-section {
+  padding: 80px 0;
+}
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Recent News</h2>
-        <p>Berita Berita Terkini</p>
-      </div><!-- End Section Title -->
+.lokasi-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 30px rgba(0,0,0,.1);
+}
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+.lokasi-box h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0d6efd;
+}
 
-        <div class="row gy-4">
+.lokasi-desc {
+  color: #666;
+  margin-bottom: 25px;
+}
 
-<?php foreach ($news as $item): ?>
-  <div class="col-xl-6" data-aos="fade-up">
+.lokasi-map iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 14px;
+  border: none;
+}
+</style>
 
-    <a href="<?= base_url('news/' . $item['news_id']) ?>"
-       class="text-decoration-none text-dark">
+<section class="lokasi-section">
+  <div class="container">
 
-      <article class="post-item d-flex">
+    <div class="text-center mb-5">
+      <h2>Lokasi Sekolah</h2>
+      <p>Temukan kami dengan mudah</p>
+    </div>
 
-        <div class="post-img">
-          <img src="<?= base_url('uploads/news/' . $item['thumbnail']) ?>"
-               alt="<?= esc($item['title']) ?>"
-               class="img-fluid"
-               loading="lazy">
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
 
-        <div class="post-content flex-grow-1">
-          <span class="category">Berita</span>
+        <div class="lokasi-box">
 
-          <h2 class="post-title">
-            <?= esc($item['title']) ?>
-          </h2>
-
-          <p class="post-description">
-            <?= word_limiter(strip_tags($item['content']), 25) ?>
-          </p>
-
-          <div class="post-meta">
-            <span class="post-date">
-              <?= date('d M Y', strtotime($item['created_at'])) ?>
-            </span>
+          <div class="lokasi-desc text-center">
+            MAN 1 Mandailing Natal – Sumatera Utara
           </div>
+
+          <div class="lokasi-map">
+            <?php if (!empty($lokasi['link'])): ?>
+              <?= $lokasi['link'] ?>
+            <?php else: ?>
+              <p class="text-center">Lokasi belum tersedia 😅</p>
+            <?php endif ?>
+          </div>
+
         </div>
-
-      </article>
-
-    </a>
-
-  </div>
-<?php endforeach ?>
-
-
-</div>
-
 
       </div>
+    </div>
 
-    </section><!-- /Recent News Section -->
+  </div>
+</section>
 
   </main>
 
@@ -86,7 +89,6 @@
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-        
         </div>
 
       </div>

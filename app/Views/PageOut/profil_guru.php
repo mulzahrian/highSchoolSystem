@@ -1,65 +1,112 @@
 
   <main class="main">
-    <!-- Recent News Section -->
-    <section id="recent-news" class="recent-news section">
+    <style>
+.guru-section {
+  padding: 80px 0;
+}
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Recent News</h2>
-        <p>Berita Berita Terkini</p>
-      </div><!-- End Section Title -->
+.guru-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0,0,0,.1);
+  transition: transform .3s ease, box-shadow .3s ease;
+  height: 100%;
+}
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+.guru-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.15);
+}
 
-        <div class="row gy-4">
+.guru-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
 
-<?php foreach ($news as $item): ?>
-  <div class="col-xl-6" data-aos="fade-up">
+.guru-body {
+  padding: 20px;
+  text-align: center;
+}
 
-    <a href="<?= base_url('news/' . $item['news_id']) ?>"
-       class="text-decoration-none text-dark">
+.guru-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
 
-      <article class="post-item d-flex">
+.guru-role {
+  font-size: 14px;
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-        <div class="post-img">
-          <img src="<?= base_url('uploads/news/' . $item['thumbnail']) ?>"
-               alt="<?= esc($item['title']) ?>"
-               class="img-fluid"
-               loading="lazy">
-        </div>
+.guru-detail {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+</style>
 
-        <div class="post-content flex-grow-1">
-          <span class="category">Berita</span>
+<section class="guru-section">
+  <div class="container">
 
-          <h2 class="post-title">
-            <?= esc($item['title']) ?>
-          </h2>
+    <div class="text-center mb-5">
+      <h2>Profil Guru</h2>
+      <p>Tenaga pendidik MAN 1 Mandailing Natal</p>
+    </div>
 
-          <p class="post-description">
-            <?= word_limiter(strip_tags($item['content']), 25) ?>
-          </p>
+    <div class="row g-4">
 
-          <div class="post-meta">
-            <span class="post-date">
-              <?= date('d M Y', strtotime($item['created_at'])) ?>
-            </span>
+      <?php if (!empty($teachers)): ?>
+        <?php foreach ($teachers as $guru): ?>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="guru-card">
+
+              <?php if (!empty($guru['image'])): ?>
+                <img
+                  src="<?= base_url('uploads/teacher/' . $guru['image']) ?>"
+                  alt="<?= esc($guru['name']) ?>"
+                  class="guru-img"
+                  loading="lazy"
+                >
+              <?php else: ?>
+                <img
+                  src="<?= base_url('assets2/img/default-user.png') ?>"
+                  class="guru-img"
+                  alt="Default Guru"
+                >
+              <?php endif ?>
+
+              <div class="guru-body">
+                <div class="guru-name">
+                  <?= esc($guru['name']) ?>
+                </div>
+
+                <div class="guru-role">
+                  <?= esc($guru['role']) ?>
+                </div>
+
+                <?php if (!empty($guru['detail'])): ?>
+                  <div class="guru-detail">
+                    <?= esc($guru['detail']) ?>
+                  </div>
+                <?php endif ?>
+              </div>
+
+            </div>
           </div>
-        </div>
+        <?php endforeach ?>
+      <?php else: ?>
+        <p class="text-center">Data guru belum tersedia 😅</p>
+      <?php endif ?>
 
-      </article>
-
-    </a>
+    </div>
 
   </div>
-<?php endforeach ?>
-
-
-</div>
-
-
-      </div>
-
-    </section><!-- /Recent News Section -->
+</section>
 
   </main>
 
@@ -86,9 +133,7 @@
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-        
         </div>
-
       </div>
     </div>
 

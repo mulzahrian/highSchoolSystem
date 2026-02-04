@@ -77,7 +77,9 @@
               <li><a href="<?= base_url('sejarah') ?>">Sejarah</a></li>
               <li><a href="<?= base_url('visi-misi') ?>">Visi Misi</a></li>
               <li><a href="<?= base_url('struktur-organisasi') ?>">Struktur Organisasi</a></li>
-              <li><a href="campus-facilities.html">Lokasi</a></li>
+              <li><a href="<?= base_url('lokasi') ?>">Lokasi</a></li>
+              <li><a href="<?= base_url('profil-guru') ?>">Profil Guru</a></li>
+              <li><a href="<?= base_url('pendidik') ?>">Tenaga Pendidik</a></li>
             </ul>
           </li>
           <li><a href="<?= base_url('berita') ?>">Berita</a></li>

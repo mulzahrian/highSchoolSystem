@@ -12,6 +12,9 @@ $routes->get('/berita', 'Berita::index');
 $routes->get('/sejarah', 'Sejarah::index');
 $routes->get('/visi-misi', 'VisiMisi::index');
 $routes->get('/struktur-organisasi', 'StrukturOrganisasi::index');
+$routes->get('/lokasi', 'Lokasi::index');
+$routes->get('/profil-guru', 'ProfilGuru::index');
+$routes->get('/pendidik', 'Pendidik::index');
 
 
 $routes->get('/', 'Auth::index');
