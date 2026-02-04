@@ -6,6 +6,14 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('home', 'Home::index');
+
+$routes->get('/berita', 'Berita::index');
+$routes->get('/sejarah', 'Sejarah::index');
+$routes->get('/visi-misi', 'VisiMisi::index');
+$routes->get('/struktur-organisasi', 'StrukturOrganisasi::index');
+
+
 $routes->get('/', 'Auth::index');
 $routes->get('/auth', 'Auth::index');
 $routes->get('/register', 'Auth::register');
@@ -14,6 +22,8 @@ $routes->post('/login', 'Auth::loginProcess');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/menu', 'Menu::index', ['filter' => 'auth']);
 $routes->get('/', 'Menu::index');
+$routes->get('news/(:num)', 'News::detail/$1');
+
 
 $routes->post('menu/store', 'Menu::store');
 $routes->get('menu/delete/(:num)', 'Menu::delete/$1');

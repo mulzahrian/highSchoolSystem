@@ -62,4 +62,20 @@ class News extends BaseController
 
         return redirect()->to(base_url('news'));
     }
+
+    public function detail($id)
+{
+    $model = new NewsModel();
+    $news = $model->find($id);
+
+    if (!$news) {
+        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+    }
+
+    return view('Layout/HomeHeader')
+    . view('Page/news_detail', [
+        'news' => $news
+    ]);
+}
+
 }

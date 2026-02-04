@@ -13,7 +13,7 @@ class Menu extends BaseController
         // SELECT TOP 1 (latest data)
         $data['history'] = $model
             ->orderBy('history_id', 'DESC')
-            ->first();
+            ->findAll();
 
         return view('Layout/header')
             . view('Layout/sidebar')
@@ -35,6 +35,7 @@ class Menu extends BaseController
 
         $model->insert([
             'image'   => $imageName,
+            'tahun' => $this->request->getPost('tahun'),
             'history' => $this->request->getPost('history'),
         ]);
 

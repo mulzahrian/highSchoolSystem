@@ -71,16 +71,16 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-        <li class="dropdown"><a href="about.html"><span>Home</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="<?= base_url('home') ?>"><span>Home</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="admissions.html">Admissions</a></li>
-              <li><a href="academics.html">Academics</a></li>
-              <li><a href="faculty-staff.html">Faculty &amp; Staff</a></li>
-              <li><a href="campus-facilities.html">Campus &amp; Facilities</a></li>
+              <li><a href="about.html">Sambutan Kepala Madrasah</a></li>
+              <li><a href="<?= base_url('sejarah') ?>">Sejarah</a></li>
+              <li><a href="<?= base_url('visi-misi') ?>">Visi Misi</a></li>
+              <li><a href="<?= base_url('struktur-organisasi') ?>">Struktur Organisasi</a></li>
+              <li><a href="campus-facilities.html">Lokasi</a></li>
             </ul>
           </li>
-          <li><a href="index.html">Berita</a></li>
+          <li><a href="<?= base_url('berita') ?>">Berita</a></li>
           <li><a href="students-life.html">Program</a></li>
           <li><a href="news.html">Zona Integritas</a></li>
           <li><a href="events.html">PTSP</a></li>
@@ -99,7 +99,7 @@
           <li class="dropdown"><a href="#"><span>Fitur</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="<?= base_url('auth') ?>">Login</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="#"><span>Page</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>

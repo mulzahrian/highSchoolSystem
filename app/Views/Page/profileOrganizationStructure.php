@@ -45,10 +45,10 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4">Maklumat Layanan</h5>
+        <h5 class="card-title fw-semibold mb-4">Organization Structure</h5>
 
         <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addOrgModal">
-          + Add Maklumat Layanan
+          + Add Organization Structure
         </button>
 
         <table class="table table-bordered table-striped">
@@ -99,7 +99,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title fw-semibold">Add Maklumat Layanan</h5>
+        <h5 class="modal-title fw-semibold">Add Organization Structure</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 

@@ -58,36 +58,39 @@
               <thead>
                 <tr>
                   <th>Image</th>
+                  <th>Tahun</th>
                   <th>History</th>
                   <th>Created At</th>
                   <th width="120">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <?php if ($history): ?>
-                  <tr>
-                    <td>
-                      <?php if (!empty($history['image'])): ?>
-                        <img src="<?= base_url('uploads/' . $history['image']) ?>" width="80">
-                      <?php endif ?>
-                    </td>
-                    <td><?= esc($history['history']) ?></td>
-                    <td><?= esc($history['created_at']) ?></td>
-                    <td>
-                      <a href="<?= base_url('menu/delete/' . $history['history_id']) ?>"
-                        class="btn btn-danger btn-sm"
-                        onclick="return confirm('Delete this data?')">
-                        Delete
-                      </a>
-                    </td>
-                  </tr>
-                <?php else: ?>
-                  <tr>
-                    <td colspan="4" class="text-center text-muted">
-                      No data available
-                    </td>
-                  </tr>
-                <?php endif ?>
+                <?php if (!empty($history)): ?>
+  <?php foreach ($history as $row): ?>
+    <tr>
+      <td>
+        <?php if (!empty($row['image'])): ?>
+          <img src="<?= base_url('uploads/' . $row['image']) ?>" width="80">
+        <?php endif ?>
+      </td>
+      <td><?= esc($row['tahun']) ?></td>
+      <td><?= esc($row['history']) ?></td>
+      <td><?= esc($row['created_at']) ?></td>
+      <td>
+        <a href="<?= base_url('menu/delete/' . $row['history_id']) ?>"
+           class="btn btn-danger btn-sm"
+           onclick="return confirm('Delete this data?')">
+          Delete
+        </a>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+<?php else: ?>
+  <tr>
+    <td colspan="5" class="text-center">No data</td>
+  </tr>
+<?php endif; ?>
+
               </tbody>
             </table>
           </div>
@@ -116,9 +119,14 @@
             <input type="file" name="image" class="form-control">
           </div>
 
+            <div class="mb-3">
+            <label class="form-label">Tahun</label>
+            <input type="text" name="tahun" class="form-control">
+          </div>
+
           <div class="mb-3">
             <label class="form-label">History</label>
-            <textarea name="history" id="historyEditor" class="form-control" rows="6"></textarea>
+            <textarea name="history" class="form-control" rows="6"></textarea>
           </div>
 
         </div>
