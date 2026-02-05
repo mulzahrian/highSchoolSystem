@@ -1,78 +1,116 @@
 
   <main class="main">
     <style>
-.plan-section {
-  padding: 80px 0;
+.plan-detail {
+    background: #f4f6f8;
+    padding: 60px 15px;
 }
 
-.plan-card {
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 25px rgba(0,0,0,.1);
-  transition: .3s;
-  height: 100%;
+.plan-detail .container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.plan-card:hover {
-  transform: translateY(-6px);
+.plan-detail-box {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    animation: fadeUp 0.6s ease;
 }
 
-.plan-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+/* YEAR TITLE */
+.plan-detail-year {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0d6efd;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-.plan-body {
-  padding: 20px;
-  text-align: center;
+/* IMAGE */
+.plan-detail-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.plan-year {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0d6efd;
+/* CONTENT */
+.plan-detail-content {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #444;
 }
+
+.plan-detail-content p {
+    margin-bottom: 16px;
+}
+
+.plan-detail-content ul,
+.plan-detail-content ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+.plan-detail-content li {
+    margin-bottom: 8px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .plan-detail-box {
+        padding: 22px;
+    }
+
+    .plan-detail-year {
+        font-size: 22px;
+    }
+}
+
 </style>
 
-<section class="plan-section">
+<section class="plan-detail">
   <div class="container">
 
-    <div class="text-center mb-5">
-      <h2>Rencana Strategis</h2>
-      <p>Perencanaan berdasarkan tahun</p>
-    </div>
+    <div class="plan-detail-box">
 
-    <div class="row g-4">
+      <div class="plan-detail-year">
+        Rencana Strategis <?= esc($plan['year']) ?>
+      </div>
 
-      <?php foreach ($plans as $item): ?>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <a href="<?= base_url('rencana-strategis/' . $item['plan_id']) ?>"
-             class="text-decoration-none text-dark">
+      <?php if (!empty($plan['thumbnail'])): ?>
+        <img
+          src="<?= base_url('uploads/plan_strategic/' . $plan['thumbnail']) ?>"
+          class="plan-detail-img"
+          alt="Rencana <?= esc($plan['year']) ?>"
+        >
+      <?php endif ?>
 
-            <div class="plan-card">
-              <img
-                src="<?= base_url('uploads/plan_strategic/' . $item['thumbnail']) ?>"
-                class="plan-img"
-                alt="Plan <?= esc($item['year']) ?>"
-              >
-
-              <div class="plan-body">
-                <div class="plan-year">
-                  <?= esc($item['year']) ?>
-                </div>
-              </div>
-            </div>
-
-          </a>
-        </div>
-      <?php endforeach ?>
+      <!-- CONTENT HTML -->
+      <div class="plan-detail-content">
+        <?= $plan['content'] ?>
+      </div>
 
     </div>
 
   </div>
 </section>
+
 
   </main>
 

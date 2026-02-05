@@ -2,3 +2,30 @@ DEBUG - 2026-02-05 08:28:00 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2026-02-05 08:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-02-05 08:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-02-05 08:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-05 09:14:58 --> ErrorException: Undefined variable $plans
+[Method: GET, Route: rencana-strategis/2]
+in APPPATH\Views\PageOut\rencana_strategis_detail.php on line 49.
+ 1 APPPATH\Views\PageOut\rencana_strategis_detail.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $plans', 'C:\\xampp\\htdocs\\highSchoolSystem\\app\\Views\\PageOut\\rencana_strategis_detail.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\highSchoolSystem\\app\\Views\\PageOut\\rencana_strategis_detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('PageOut/rencana_strategis_detail', [], true)
+ 5 APPPATH\Controllers\RencanaStrategis.php(37): view('PageOut/rencana_strategis_detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RencanaStrategis->detail('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RencanaStrategis))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-02-05 09:16:29 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: rencana-strategis/2]
+in APPPATH\Views\PageOut\rencana_strategis_detail.php on line 51.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('PageOut/rencana_strategis_detail', [], true)
+ 4 APPPATH\Controllers\RencanaStrategis.php(37): view('PageOut/rencana_strategis_detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RencanaStrategis->detail('2')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RencanaStrategis))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
