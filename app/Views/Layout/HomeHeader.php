@@ -80,10 +80,30 @@
               <li><a href="<?= base_url('lokasi') ?>">Lokasi</a></li>
               <li><a href="<?= base_url('profil-guru') ?>">Profil Guru</a></li>
               <li><a href="<?= base_url('pendidik') ?>">Tenaga Pendidik</a></li>
+              <li><a href="<?= base_url('sarana-prasarana') ?>">Sarana Prasarana</a></li>
             </ul>
           </li>
           <li><a href="<?= base_url('berita') ?>">Berita</a></li>
-          <li><a href="students-life.html">Program</a></li>
+          <li class="dropdown"><a href="<?= base_url('home') ?>"><span>Program</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="<?= base_url('rencana-strategis') ?>">Rencana Strategis</a></li>
+              <li class="dropdown"><a href=""><span>Akademik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>    
+              <li><a href="<?= base_url('pengumuman') ?>">Pengumuman</a></li>
+              <li><a href="<?= base_url('kalender-akademik') ?>">Kalender Akademin</a></li>
+              <li><a href="<?= base_url('kalender-akademik') ?>">KOM</a></li>
+              <li><a href="<?= base_url('kalender-akademik') ?>">Bimbingan Karir dan Study Lanjut</a></li>
+              <li><a href="<?= base_url('kalender-akademik') ?>">Pembelajaran Jarak Jauh</a></li>
+              <li><a href="<?= base_url('kalender-akademik') ?>">PTMT</a></li>
+              <li><a href="<?= base_url('kalender-akademik') ?>">SKS</a></li>
+              <li><a href="<?= base_url('kalender-akademik') ?>">UKBM</a></li>
+              </ul>
+              <li>
+              <li><a href="<?= base_url('visi-misi') ?>">Keterampilan</a></li>
+              <li><a href="<?= base_url('visi-misi') ?>">Ekstra Kulikuler</a></li>
+              <li><a href="<?= base_url('visi-misi') ?>">Layanan Madrasah</a></li>
+            </ul>
+          </li>
           <li><a href="news.html">Zona Integritas</a></li>
           <li><a href="events.html">PTSP</a></li>
           <li><a href="alumni.html">PPDB</a></li>

@@ -15,6 +15,10 @@ $routes->get('/struktur-organisasi', 'StrukturOrganisasi::index');
 $routes->get('/lokasi', 'Lokasi::index');
 $routes->get('/profil-guru', 'ProfilGuru::index');
 $routes->get('/pendidik', 'Pendidik::index');
+$routes->get('/sarana-prasarana', 'Sarana::index');
+$routes->get('/rencana-strategis', 'RencanaStrategis::index');
+$routes->get('/rencana-strategis/(:num)', 'RencanaStrategis::detail/$1');
+
 
 
 $routes->get('/', 'Auth::index');
