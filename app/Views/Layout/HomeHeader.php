@@ -91,8 +91,8 @@
               <ul>    
               <li><a href="<?= base_url('pengumuman') ?>">Pengumuman</a></li>
               <li><a href="<?= base_url('kalender-akademik') ?>">Kalender Akademin</a></li>
-              <li><a href="<?= base_url('kalender-akademik') ?>">KOM</a></li>
-              <li><a href="<?= base_url('kalender-akademik') ?>">Bimbingan Karir dan Study Lanjut</a></li>
+              <li><a href="<?= base_url('kom') ?>">KOM</a></li>
+              <li><a href="<?= base_url('bimbingan') ?>">Bimbingan Karir dan Study Lanjut</a></li>
               <li><a href="<?= base_url('kalender-akademik') ?>">Pembelajaran Jarak Jauh</a></li>
               <li><a href="<?= base_url('kalender-akademik') ?>">PTMT</a></li>
               <li><a href="<?= base_url('kalender-akademik') ?>">SKS</a></li>

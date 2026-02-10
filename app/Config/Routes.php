@@ -18,6 +18,13 @@ $routes->get('/pendidik', 'Pendidik::index');
 $routes->get('/sarana-prasarana', 'Sarana::index');
 $routes->get('/rencana-strategis', 'RencanaStrategis::index');
 $routes->get('/rencana-strategis/(:num)', 'RencanaStrategis::detail/$1');
+$routes->get('pengumuman', 'Pengumuman::index');
+$routes->get('pengumuman/(:num)', 'Pengumuman::detail/$1');
+$routes->get('kalender-akademik', 'KalenderAkademik::index');
+$routes->get('kalender-akademik/(:num)', 'KalenderAkademik::detail/$1');
+$routes->get('kom', 'Kom::index');
+$routes->get('bimbingan', 'Bimbingan::index');
+
 
 
 
@@ -88,6 +95,34 @@ $routes->get('bimbingan-karir/delete/(:num)', 'BimbinganKarir::delete/$1');
 $routes->get('opening', 'Opening::index');
 $routes->post('opening/add', 'Opening::add');
 $routes->get('opening/delete/(:num)', 'Opening::delete/$1');
+
+$routes->get('pjj', 'PembelajaranJarakJauh::index');
+$routes->post('pjj/add', 'PembelajaranJarakJauh::add');
+$routes->post('pjj/update/(:num)', 'PembelajaranJarakJauh::update/$1');
+$routes->get('pjj/delete/(:num)', 'PembelajaranJarakJauh::delete/$1');
+
+
+$routes->get('ptmt', 'Ptmt::index');
+$routes->post('ptmt/add', 'Ptmt::add');
+$routes->post('ptmt/update/(:num)', 'Ptmt::update/$1');
+$routes->get('ptmt/delete/(:num)', 'Ptmt::delete/$1');
+
+$routes->get('sks', 'Sks::index');
+$routes->post('sks/add', 'Sks::add');
+$routes->post('sks/update/(:num)', 'Sks::update/$1');
+$routes->get('sks/delete/(:num)', 'Sks::delete/$1');
+
+$routes->get('ukbm', 'Ukbm::index');
+$routes->post('ukbm/add', 'Ukbm::add');
+$routes->post('ukbm/update/(:num)', 'Ukbm::update/$1');
+$routes->get('ukbm/delete/(:num)', 'Ukbm::delete/$1');
+
+$routes->get('keterampilan', 'Keterampilan::index');
+$routes->post('keterampilan/add', 'Keterampilan::add');
+$routes->post('keterampilan/update/(:num)', 'Keterampilan::update/$1');
+$routes->get('keterampilan/delete/(:num)', 'Keterampilan::delete/$1');
+
+
 
 
 

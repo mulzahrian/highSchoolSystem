@@ -45,10 +45,10 @@
     <div class="card">
       <div class="card-body">
 
-        <h5 class="card-title fw-semibold mb-4">Akuntabilitas</h5>
+        <h5 class="card-title fw-semibold mb-4">Bimbingan Karir</h5>
 
         <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
-          + Add Akuntabilitas
+          + Add Bimbingan Karir
         </button>
 
         <table class="table table-bordered table-striped">
@@ -103,7 +103,7 @@
 
       <div class="modal-header">
         <!-- <h5 class="modal-title fw-semibold">Add Bimbingan Karir</h5> -->
-        <h5 class="modal-title fw-semibold">Akuntabilitas</h5>
+        <h5 class="modal-title fw-semibold">Bimbingan Karir</h5>
 
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
