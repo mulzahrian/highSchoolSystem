@@ -45,10 +45,10 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4">KETERAMPILAN</h5>
+        <h5 class="card-title fw-semibold mb-4">ekstrakulikuler</h5>
 
 <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
-  + Add Keterampilan
+  + Add ekstrakulikuler
 </button>
 
 <table class="table table-bordered">
@@ -67,7 +67,7 @@
       <td><?= esc($r['header']) ?></td>
 
       <td>
-        <img src="<?= base_url('uploads/keterampilan/'.$r['image']) ?>" width="80">
+        <img src="<?= base_url('uploads/ekstrakulikuler/'.$r['image']) ?>" width="80">
       </td>
 
       <td style="max-width:300px">
@@ -87,14 +87,14 @@
           class="btn btn-warning btn-sm"
           data-bs-toggle="modal"
           data-bs-target="#editModal"
-          data-id="<?= $r['keterampilan_id'] ?>"
+          data-id="<?= $r['ekstrakulikuler_id'] ?>"
           data-header="<?= esc($r['header']) ?>"
           data-content="<?= htmlspecialchars($r['content']) ?>"
           data-active="<?= $r['is_active'] ?>">
           Edit
         </button>
 
-        <a href="<?= base_url('keterampilan/delete/'.$r['keterampilan_id']) ?>"
+        <a href="<?= base_url('ekstrakulikuler/delete/'.$r['ekstrakulikuler_id']) ?>"
            class="btn btn-danger btn-sm"
            onclick="return confirm('Delete data?')">
           Delete
@@ -120,11 +120,11 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title fw-semibold">Add Keterampilan</h5>
+        <h5 class="modal-title fw-semibold">Add ekstrakulikuler</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
-      <form action="<?= base_url('keterampilan/add') ?>" method="post" enctype="multipart/form-data">
+      <form action="<?= base_url('ekstrakulikuler/add') ?>" method="post" enctype="multipart/form-data">
         <div class="modal-body">
 
           <div class="mb-3">
@@ -164,7 +164,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title fw-semibold">Edit Keterampilan</h5>
+        <h5 class="modal-title fw-semibold">Edit ekstrakulikuler</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
@@ -220,6 +220,6 @@ editModal.addEventListener('show.bs.modal', function (event) {
   CKEDITOR.instances.editEditor.setData(btn.dataset.content);
 
   document.getElementById('editForm').action =
-    "<?= base_url('keterampilan/update/') ?>" + btn.dataset.id;
+    "<?= base_url('ekstrakulikuler/update/') ?>" + btn.dataset.id;
 });
 </script>

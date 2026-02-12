@@ -122,6 +122,18 @@ $routes->post('keterampilan/add', 'Keterampilan::add');
 $routes->post('keterampilan/update/(:num)', 'Keterampilan::update/$1');
 $routes->get('keterampilan/delete/(:num)', 'Keterampilan::delete/$1');
 
+$routes->get('layanan-madrasah', 'LayananMadrasah::index');
+$routes->post('layanan-madrasah/add', 'LayananMadrasah::add');
+$routes->post('layanan-madrasah/update/(:num)', 'LayananMadrasah::update/$1');
+$routes->get('layanan-madrasah/delete/(:num)', 'LayananMadrasah::delete/$1');
+
+$routes->get('ekstrakulikuler', 'Ekstrakulikuler::index');
+$routes->post('ekstrakulikuler/add', 'Ekstrakulikuler::add');
+$routes->post('ekstrakulikuler/update/(:num)', 'Ekstrakulikuler::update/$1');
+$routes->get('ekstrakulikuler/delete/(:num)', 'Ekstrakulikuler::delete/$1');
+
+
+
 
 
 
