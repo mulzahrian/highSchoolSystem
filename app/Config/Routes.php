@@ -132,6 +132,30 @@ $routes->post('ekstrakulikuler/add', 'Ekstrakulikuler::add');
 $routes->post('ekstrakulikuler/update/(:num)', 'Ekstrakulikuler::update/$1');
 $routes->get('ekstrakulikuler/delete/(:num)', 'Ekstrakulikuler::delete/$1');
 
+$routes->get('laporan-kinerja', 'LaporanKinerja::index');
+$routes->post('laporan-kinerja/add', 'LaporanKinerja::add');
+$routes->post('laporan-kinerja/update/(:num)', 'LaporanKinerja::update/$1');
+$routes->get('laporan-kinerja/delete/(:num)', 'LaporanKinerja::delete/$1');
+
+$routes->get('perkin', 'Perkin::index');
+$routes->post('perkin/add', 'Perkin::add');
+$routes->post('perkin/update/(:num)', 'Perkin::update/$1');
+$routes->get('perkin/delete/(:num)', 'Perkin::delete/$1');
+
+$routes->get('relasi-belanja', 'RelasiBelanja::index');
+$routes->post('relasi-belanja/add', 'RelasiBelanja::add');
+$routes->post('relasi-belanja/update/(:num)', 'RelasiBelanja::update/$1');
+$routes->get('relasi-belanja/delete/(:num)', 'RelasiBelanja::delete/$1');
+
+$routes->get('lima-budaya', 'LimaBudaya::index');
+$routes->post('lima-budaya/add', 'LimaBudaya::add');
+$routes->post('lima-budaya/update/(:num)', 'LimaBudaya::update/$1');
+$routes->get('lima-budaya/delete/(:num)', 'LimaBudaya::delete/$1');
+
+
+
+
+
 
 
 

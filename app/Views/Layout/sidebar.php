@@ -293,19 +293,31 @@
               <ul aria-expanded="false" class="collapse first-level">
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('bimbingan-karir') ?>">
+                    href="<?= base_url('laporan-kinerja') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
                       </div>
-                      <span class="hide-menu">Akuntabilitas</span>
+                      <span class="hide-menu">Laporan Kinerja</span>
                     </div>
                     
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('vision-mission') ?>">
+                    href="<?= base_url('perkin') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Perkin</span>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('relasi-belanja') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
@@ -315,14 +327,14 @@
                     
                   </a>
                 </li>
-                <li class="sidebar-item">
+                  <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('organization-structure') ?>">
+                    href="<?= base_url('lima-budaya') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
                       </div>
-                      <span class="hide-menu">Budaya Kerja</span>
+                      <span class="hide-menu">5 Budaya Kerja Kementrian</span>
                     </div>
                     
                   </a>
