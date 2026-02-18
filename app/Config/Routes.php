@@ -152,6 +152,54 @@ $routes->post('lima-budaya/add', 'LimaBudaya::add');
 $routes->post('lima-budaya/update/(:num)', 'LimaBudaya::update/$1');
 $routes->get('lima-budaya/delete/(:num)', 'LimaBudaya::delete/$1');
 
+$routes->get('zona-integrasi', 'ZonaIntegrasi::index');
+$routes->post('zona-integrasi/add', 'ZonaIntegrasi::add');
+$routes->post('zona-integrasi/update/(:num)', 'ZonaIntegrasi::update/$1');
+$routes->get('zona-integrasi/delete/(:num)', 'ZonaIntegrasi::delete/$1');
+
+$routes->get('layanan-public', 'LayananPublic::index');
+$routes->post('layanan-public/add', 'LayananPublic::add');
+$routes->post('layanan-public/update/(:num)', 'LayananPublic::update/$1');
+$routes->get('layanan-public/delete/(:num)', 'LayananPublic::delete/$1');
+
+$routes->get('ppid', 'Ppid::index');
+$routes->post('ppid/add', 'Ppid::add');
+$routes->post('ppid/update/(:num)', 'Ppid::update/$1');
+$routes->get('ppid/delete/(:num)', 'Ppid::delete/$1');
+
+$routes->get('yel-yel', 'YelYel::index');
+$routes->post('yel-yel/add', 'YelYel::add');
+$routes->post('yel-yel/update/(:num)', 'YelYel::update/$1');
+$routes->get('yel-yel/delete/(:num)', 'YelYel::delete/$1');
+
+$routes->get('pengendalian_intern', 'PengendalianIntern::index');
+$routes->post('pengendalian_intern/add', 'PengendalianIntern::add');
+$routes->post('pengendalian_intern/update/(:num)', 'PengendalianIntern::update/$1');
+$routes->get('pengendalian_intern/delete/(:num)', 'PengendalianIntern::delete/$1');
+
+$routes->get('pengendalian_gratifikasi', 'PengendalianGratifikasi::index');
+$routes->post('pengendalian_gratifikasi/add', 'PengendalianGratifikasi::add');
+$routes->post('pengendalian_gratifikasi/update/(:num)', 'PengendalianGratifikasi::update/$1');
+$routes->get('pengendalian_gratifikasi/delete/(:num)', 'PengendalianGratifikasi::delete/$1');
+
+$routes->get('whistle_blowing', 'WhistleBlowing::index');
+$routes->post('whistle_blowing/add', 'WhistleBlowing::add');
+$routes->post('whistle_blowing/update/(:num)', 'WhistleBlowing::update/$1');
+$routes->get('whistle_blowing/delete/(:num)', 'WhistleBlowing::delete/$1');
+
+$routes->get('agen_perubahan', 'AgenPerubahan::index');
+$routes->post('agen_perubahan/add', 'AgenPerubahan::add');
+$routes->post('agen_perubahan/update/(:num)', 'AgenPerubahan::update/$1');
+$routes->get('agen_perubahan/delete/(:num)', 'AgenPerubahan::delete/$1');
+
+$routes->get('tracat', 'Tracat::index');
+$routes->post('tracat/add', 'Tracat::add');
+$routes->post('tracat/update/(:num)', 'Tracat::update/$1');
+$routes->get('tracat/delete/(:num)', 'Tracat::delete/$1');
+
+
+
+
 
 
 

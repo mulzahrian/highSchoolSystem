@@ -341,7 +341,7 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-teacher') ?>">
+                    href="<?= base_url('zona-integrasi') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
@@ -353,36 +353,78 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-location') ?>">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="round-16 d-flex align-items-center justify-content-center">
-                        <i class="ti ti-layout-kanban"></i>
-                      </div>
-                      <span class="hide-menu">Lokasi</span>
-                    </div>
-                    
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-teacher-detail') ?>">
+                    href="<?= base_url('layanan-public') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-circle"></i>
                       </div>
-                      <span class="hide-menu">Pelayahan Publik</span>
+                      <span class="hide-menu">Pelayanan Publik</span>
                     </div>
-                    
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-infrastructure') ?>">
+                    href="<?= base_url('ppid') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-kanban"></i>
                       </div>
                       <span class="hide-menu">PPID</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('yel-yel') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Yel Yel dan Jargon</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('pengendalian_intern') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Sistem Pengendalian Intern Pemerintah</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('pengendalian_gratifikasi') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Pengendalian Gratifikasi</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('whistle_blowing') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Whistle Blowing System</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('agen_perubahan') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-kanban"></i>
+                      </div>
+                      <span class="hide-menu">Agen Perubahan</span>
                     </div>
                   </a>
                 </li>
@@ -400,7 +442,7 @@
               <ul aria-expanded="false" class="collapse first-level">
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('menu') ?>">
+                    href="<?= base_url('tracat') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
