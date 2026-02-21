@@ -454,7 +454,7 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('organization-structure') ?>">
+                    href="<?= base_url('maklumat_layanan') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
@@ -466,7 +466,7 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('organization-structure') ?>">
+                    href="<?= base_url('alur_tamu') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
@@ -478,7 +478,7 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-teacher') ?>">
+                    href="<?= base_url('alur_penelitian') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>

@@ -197,6 +197,21 @@ $routes->post('tracat/add', 'Tracat::add');
 $routes->post('tracat/update/(:num)', 'Tracat::update/$1');
 $routes->get('tracat/delete/(:num)', 'Tracat::delete/$1');
 
+$routes->get('maklumat_layanan', 'MaklumatLayanan::index');
+$routes->post('maklumat_layanan/add', 'MaklumatLayanan::add');
+$routes->post('maklumat_layanan/update/(:num)', 'MaklumatLayanan::update/$1');
+$routes->get('maklumat_layanan/delete/(:num)', 'MaklumatLayanan::delete/$1');
+
+$routes->get('alur_tamu', 'AlurTamu::index');
+$routes->post('alur_tamu/add', 'AlurTamu::add');
+$routes->post('alur_tamu/update/(:num)', 'AlurTamu::update/$1');
+$routes->get('alur_tamu/delete/(:num)', 'AlurTamu::delete/$1');
+
+$routes->get('alur_penelitian', 'AlurPenelitian::index');
+$routes->post('alur_penelitian/add', 'AlurPenelitian::add');
+$routes->post('alur_penelitian/update/(:num)', 'AlurPenelitian::update/$1');
+$routes->get('alur_penelitian/delete/(:num)', 'AlurPenelitian::delete/$1');
+
 
 
 

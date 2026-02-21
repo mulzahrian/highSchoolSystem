@@ -1,0 +1,16 @@
+DEBUG - 2026-02-20 22:38:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-20 22:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-02-20 22:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-02-20 22:46:22 --> ErrorException: mkdir(): File exists
+[Method: POST, Route: maklumat_layanan/add]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 181.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mkdir(): File exists', 'C:\\xampp\\htdocs\\highSchoolSystem\\system\\HTTP\\Files\\UploadedFile.php', 181)
+ 2 SYSTEMPATH\HTTP\Files\UploadedFile.php(181): mkdir('uploads/maklumat_layanan/', 511, true)
+ 3 SYSTEMPATH\HTTP\Files\UploadedFile.php(135): CodeIgniter\HTTP\Files\UploadedFile->setPath('uploads/maklumat_layanan/')
+ 4 APPPATH\Controllers\MaklumatLayanan.php(29): CodeIgniter\HTTP\Files\UploadedFile->move('uploads/maklumat_layanan/', '1771627582_1d5ed886151921a426fc.pdf')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MaklumatLayanan->add()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaklumatLayanan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
