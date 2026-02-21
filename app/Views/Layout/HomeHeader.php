@@ -105,34 +105,50 @@
             </ul>
           </li>
           <li><a href="news.html">Zona Integritas</a></li>
-          <li><a href="events.html">PTSP</a></li>
-          <li><a href="alumni.html">PPDB</a></li>
+          <li class="dropdown"><a href="#"><span>PTSP</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="<?= base_url('outtracat') ?>">TRACAT</a></li>
+                  <li><a href="<?= base_url('outmaklumat-layanan') ?>">Maklumat Layanan</a></li>
+                  <li><a href="<?= base_url('outmaklumat-layanan') ?>">Alur Pelayanan Tamu</a></li>
+                </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>PPDB</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://www.ppdb.mansatumandailingnatal.sch.id/">PPDB</a></li>
+                  <li><a href="<?= base_url('outppdb') ?>">Pengumuman PPDB</a></li>
+                </ul>
+          </li>
           <li class="dropdown"><a href="#"><span>Agen Perubahan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="news-details.html">News Details</a></li>
-              <li><a href="event-details.html">Event Details</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="404.html">Error 404</a></li>
-              <li><a href="starter-page.html">Starter Page</a></li>
-            </ul>
+          <ul>
+<?php if (!empty($agen_perubahan)): ?>
+    <?php foreach ($agen_perubahan as $item): ?>
+        <li>
+            <a href="<?= base_url('agen-perubahan/' . urlencode(strtolower($item['header']))) ?>">
+                <?= esc($item['header']) ?>
+            </a>
+        </li>
+    <?php endforeach; ?>
+<?php else: ?>
+    <li><a href="#">No Data</a></li>
+<?php endif; ?>
+</ul>
           </li>
 
           <li class="dropdown"><a href="#"><span>Fitur</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="<?= base_url('auth') ?>">Login</a></li>
-              <li class="dropdown"><a href="#"><span>Page</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li><a href="<?= base_url('outdownload') ?>">Download</a></li>
+              <li><a href="<?= base_url('outgaleri') ?>">Galeri</a></li>
+              <li><a href="<?= base_url('outartikel') ?>">Artikel</a></li>
+              <li><a href="<?= base_url('outkaleidoskop') ?>">Kaleidoskop</a></li>
+              <li><a href="<?= base_url('outalur-penelitian') ?>">Alur Izin Penelitian</a></li>
+              <li><a href="https://rdm.man1mandailingnatal.sch.id/auth#!/dashboard">Raport Digital</a></li>
+              <li class="dropdown"><a href="#"><span>NISN</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                  <li><a href="https://nisn.data.kemdikbud.go.id/">Cek NISN</a></li>
+                  <li><a href="https://nisn.data.kemdikbud.go.id/index.php/Cindex/formcaribynama">Cek Berdasarkan Nama</a></li>
                 </ul>
               </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
           <!-- <li><a href="contact.html">Contact</a></li> -->

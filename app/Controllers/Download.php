@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-use App\Models\AgenPerubahanModel;
+use App\Models\DownloadModel;
 
-class AgenPerubahan extends BaseController
+class Download extends BaseController
 {
     public function index()
     {
-        $model = new AgenPerubahanModel();
+        $model = new DownloadModel();
 
         $data['rows'] = $model
             ->orderBy('agen_id', 'DESC')
@@ -16,17 +16,17 @@ class AgenPerubahan extends BaseController
 
         return view('Layout/header')
             . view('Layout/sidebar')
-            . view('Page/agen_perubahan', $data)
+            . view('Page/download', $data)
             . view('Layout/footer');
     }
 
     public function add()
     {
-        $model = new AgenPerubahanModel();
+        $model = new DownloadModel();
 
         $image = $this->request->getFile('image');
         $imageName = $image->getRandomName();
-        $image->move('uploads/agen_perubahan', $imageName);
+        $image->move('uploads/download', $imageName);
 
         $model->insert([
             'header'    => $this->request->getPost('header'),
@@ -35,12 +35,12 @@ class AgenPerubahan extends BaseController
             'is_active' => $this->request->getPost('is_active') ? 1 : 0,
         ]);
 
-        return redirect()->to(base_url('agen_perubahan'));
+        return redirect()->to(base_url('download'));
     }
 
     public function update($id)
     {
-        $model = new AgenPerubahanModel();
+        $model = new DownloadModel();
 
         $data = [
             'header'    => $this->request->getPost('header'),
@@ -51,45 +51,20 @@ class AgenPerubahan extends BaseController
         $image = $this->request->getFile('image');
         if ($image && $image->isValid()) {
             $imageName = $image->getRandomName();
-            $image->move('uploads/agen_perubahan', $imageName);
+            $image->move('uploads/download', $imageName);
             $data['image'] = $imageName;
         }
 
         $model->update($id, $data);
 
-        return redirect()->to(base_url('agen_perubahan'));
+        return redirect()->to(base_url('download'));
     }
 
     public function delete($id)
     {
-        $model = new AgenPerubahanModel();
+        $model = new DownloadModel();
         $model->delete($id);
 
-        return redirect()->to(base_url('agen_perubahan'));
-    }
-
-    protected $model;
-
-    public function __construct()
-    {
-        $this->model = new AgenPerubahanModel();
-    }
-
-    public function detail($header)
-    {
-        $header = urldecode($header);
-
-        $data['agen'] = $this->model
-            ->where('is_active', 1)
-            ->where('LOWER(header)', strtolower($header))
-            ->first();
-
-        if (!$data['agen']) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-        }
-
-        return view('Layout/HomeHeader')
-            . view('PageOut/outagen_detail', $data)
-            . view('Layout/HomeFooter');
+        return redirect()->to(base_url('download'));
     }
 }

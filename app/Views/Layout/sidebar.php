@@ -490,19 +490,19 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-location') ?>">
+                    href="<?= base_url('peminjaman_barang') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-kanban"></i>
                       </div>
-                      <span class="hide-menu">Legalisasi Dokument</span>
+                      <span class="hide-menu">Peminjaman Barang</span>
                     </div>
                     
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-teacher-detail') ?>">
+                    href="<?= base_url('mutasi_siswa') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-circle"></i>
@@ -514,7 +514,7 @@
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('profile-infrastructure') ?>">
+                    href="<?= base_url('survey_kepuasan') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-kanban"></i>
@@ -535,7 +535,7 @@
                 </div>
               </a>
               <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
+                <!-- <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
                     href="<?= base_url('menu') ?>">
                     <div class="d-flex align-items-center gap-3">
@@ -544,12 +544,11 @@
                       </div>
                       <span class="hide-menu">PPDP</span>
                     </div>
-                    
                   </a>
-                </li>
+                </li> -->
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('vision-mission') ?>">
+                    href="<?= base_url('ppdb') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
@@ -567,32 +566,53 @@
                   <span class="d-flex">
                     <i class="ti ti-layout-grid"></i>
                   </span>
-                  <span class="hide-menu">Agen Perubahan</span>
+                  <span class="hide-menu">Fitur</span>
                 </div>
               </a>
               <ul aria-expanded="false" class="collapse first-level">
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('menu') ?>">
+                    href="<?= base_url('download') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
                       </div>
-                      <span class="hide-menu">Peningkatan Bahasa Asing</span>
+                      <span class="hide-menu">Download</span>
                     </div>
                     
                   </a>
                 </li>
                 <li class="sidebar-item">
                   <a class="sidebar-link justify-content-between"  
-                    href="<?= base_url('vision-mission') ?>">
+                    href="<?= base_url('artikel') ?>">
                     <div class="d-flex align-items-center gap-3">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-layout-grid"></i>
                       </div>
-                      <span class="hide-menu">Program Literasi</span>
+                      <span class="hide-menu">Artikel</span>
                     </div>
-                    
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('kaleidoskop') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Kaleidoskop</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a class="sidebar-link justify-content-between"  
+                    href="<?= base_url('galeri') ?>">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-layout-grid"></i>
+                      </div>
+                      <span class="hide-menu">Galeri</span>
+                    </div>
                   </a>
                 </li>
               </ul>

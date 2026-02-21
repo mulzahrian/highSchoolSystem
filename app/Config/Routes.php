@@ -24,7 +24,18 @@ $routes->get('kalender-akademik', 'KalenderAkademik::index');
 $routes->get('kalender-akademik/(:num)', 'KalenderAkademik::detail/$1');
 $routes->get('kom', 'Kom::index');
 $routes->get('bimbingan', 'Bimbingan::index');
-
+$routes->get('outdownload', 'OutDownload::index');
+$routes->get('outdownload/(:num)', 'OutDownload::detail/$1');
+$routes->get('outartikel', 'OutArtikel::index');
+$routes->get('outartikel/(:num)', 'OutArtikel::detail/$1');
+$routes->get('outkaleidoskop', 'OutKaleidoskop::index');
+$routes->get('outkaleidoskop/(:num)', 'OutKaleidoskop::detail/$1');
+$routes->get('outgaleri', 'OutGaleri::index');
+$routes->get('outalur-penelitian', 'OutAlurPenelitian::index');
+$routes->get('/agen-perubahan/(:any)', 'AgenPerubahan::detail/$1');
+$routes->get('/outppdb', 'OutPpdb::index');
+$routes->get('/outtracat', 'OutTracat::index');
+$routes->get('/outmaklumat-layanan', 'OutMaklumatLayanan::index');
 
 
 
@@ -212,8 +223,45 @@ $routes->post('alur_penelitian/add', 'AlurPenelitian::add');
 $routes->post('alur_penelitian/update/(:num)', 'AlurPenelitian::update/$1');
 $routes->get('alur_penelitian/delete/(:num)', 'AlurPenelitian::delete/$1');
 
+$routes->get('peminjaman_barang', 'PeminjamanBarang::index');
+$routes->post('peminjaman_barang/add', 'PeminjamanBarang::add');
+$routes->post('peminjaman_barang/update/(:num)', 'PeminjamanBarang::update/$1');
+$routes->get('peminjaman_barang/delete/(:num)', 'PeminjamanBarang::delete/$1');
 
+$routes->get('mutasi_siswa', 'MutasiSiswa::index');
+$routes->post('mutasi_siswa/add', 'MutasiSiswa::add');
+$routes->post('mutasi_siswa/update/(:num)', 'MutasiSiswa::update/$1');
+$routes->get('mutasi_siswa/delete/(:num)', 'MutasiSiswa::delete/$1');
 
+$routes->get('survey_kepuasan', 'SurveyKepuasan::index');
+$routes->post('survey_kepuasan/add', 'SurveyKepuasan::add');
+$routes->post('survey_kepuasan/update/(:num)', 'SurveyKepuasan::update/$1');
+$routes->get('survey_kepuasan/delete/(:num)', 'SurveyKepuasan::delete/$1');
+
+$routes->get('ppdb', 'Ppdb::index');
+$routes->post('ppdb/add', 'Ppdb::add');
+$routes->post('ppdb/update/(:num)', 'Ppdb::update/$1');
+$routes->get('ppdb/delete/(:num)', 'Ppdb::delete/$1');
+
+$routes->get('download', 'Download::index');
+$routes->post('download/add', 'Download::add');
+$routes->post('download/update/(:num)', 'Download::update/$1');
+$routes->get('download/delete/(:num)', 'Download::delete/$1');
+
+$routes->get('artikel', 'Artikel::index');
+$routes->post('artikel/add', 'Artikel::add');
+$routes->post('artikel/update/(:num)', 'Artikel::update/$1');
+$routes->get('artikel/delete/(:num)', 'Artikel::delete/$1');
+
+$routes->get('kaleidoskop', 'Kaleidoskop::index');
+$routes->post('kaleidoskop/add', 'Kaleidoskop::add');
+$routes->post('kaleidoskop/update/(:num)', 'Kaleidoskop::update/$1');
+$routes->get('kaleidoskop/delete/(:num)', 'Kaleidoskop::delete/$1');
+
+$routes->get('galeri', 'Galeri::index');
+$routes->post('galeri/add', 'Galeri::add');
+$routes->post('galeri/update/(:num)', 'Galeri::update/$1');
+$routes->get('galeri/delete/(:num)', 'Galeri::delete/$1');
 
 
 
