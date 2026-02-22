@@ -67,4 +67,22 @@ class Ekstrakulikuler extends BaseController
 
         return redirect()->to(base_url('ekstrakulikuler'));
     }
+
+    public function detail($id)
+    {
+        $model = new EkstrakulikulerModel();
+
+        $data['ekskul'] = $model
+            ->where('ekstrakulikuler_id', $id)
+            ->where('is_active', 1)
+            ->first();
+
+        if (!$data['ekskul']) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        return view('Layout/HomeHeader')
+            . view('PageOut/ekstrakulikuler_detail', $data)
+            . view('Layout/HomeFooter');
+    }
 }

@@ -65,4 +65,22 @@ class LayananPublic extends BaseController
 
         return redirect()->to(base_url('layanan-public'));
     }
+
+    public function detail($id)
+    {
+        $model = new LayananPublicModel();
+
+        $data['layanan'] = $model
+            ->where('layanan_id', $id)
+            ->where('is_active', 1)
+            ->first();
+
+        if (!$data['layanan']) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        return view('Layout/HomeHeader')
+            . view('PageOut/outlayanan_public_detail', $data)
+            . view('Layout/HomeFooter');
+    }
 }

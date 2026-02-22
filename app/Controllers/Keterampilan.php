@@ -67,4 +67,22 @@ class Keterampilan extends BaseController
 
         return redirect()->to(base_url('keterampilan'));
     }
+
+    public function detail($id)
+    {
+        $model = new KeterampilanModel();
+
+        $data['keterampilan'] = $model
+            ->where('keterampilan_id', $id)
+            ->where('is_active', 1)
+            ->first();
+
+        if (!$data['keterampilan']) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        return view('Layout/HomeHeader')
+            . view('PageOut/keterampilan_detail', $data)
+            . view('Layout/HomeFooter');
+    }
 }

@@ -65,4 +65,22 @@ class Ppid extends BaseController
 
         return redirect()->to(base_url('ppid'));
     }
+
+    public function detail($id)
+    {
+        $model = new PpidModel();
+
+        $data['ppid'] = $model
+            ->where('ppid_id', $id)
+            ->where('is_active', 1)
+            ->first();
+
+        if (!$data['ppid']) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        return view('Layout/HomeHeader')
+            . view('PageOut/ppid_detail', $data)
+            . view('Layout/HomeFooter');
+    }
 }

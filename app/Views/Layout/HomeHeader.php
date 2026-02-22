@@ -96,20 +96,112 @@
               <li><a href="<?= base_url('kalender-akademik') ?>">Pembelajaran Jarak Jauh</a></li>
               <li><a href="<?= base_url('kalender-akademik') ?>">PTMT</a></li>
               <li><a href="<?= base_url('kalender-akademik') ?>">SKS</a></li>
-              <li><a href="<?= base_url('kalender-akademik') ?>">UKBM</a></li>
+              <li><a href="<?= base_url('outukbm') ?>">UKBM</a></li>
               </ul>
               <li>
-              <li><a href="<?= base_url('visi-misi') ?>">Keterampilan</a></li>
-              <li><a href="<?= base_url('visi-misi') ?>">Ekstra Kulikuler</a></li>
-              <li><a href="<?= base_url('visi-misi') ?>">Layanan Madrasah</a></li>
+              <li class="dropdown">
+                <a href="#">Keterampilan<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+                <?php if (!empty($keterampilan)) : ?>
+                    <ul>
+                        <?php foreach ($keterampilan as $item) : ?>
+                            <li>
+                                <a href="<?= base_url('outketerampilan/' . $item['keterampilan_id']) ?>">
+                                    <?= esc($item['header']) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+              <li class="dropdown">
+                <a href="#">Ekstrakurikuler<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+                <?php if (!empty($ekstrakulikuler)) : ?>
+                    <ul>
+                        <?php foreach ($ekstrakulikuler as $item) : ?>
+                            <li>
+                                <a href="<?= base_url('outekstrakulikuler/' . $item['ekstrakulikuler_id']) ?>">
+                                    <?= esc($item['header']) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+              <li class="dropdown">
+                <a href="<?= base_url('visi-misi') ?>">Layanan Madrasah<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+                <?php if (!empty($layanan_madrasah)) : ?>
+                    <ul>
+                        <?php foreach ($layanan_madrasah as $item) : ?>
+                            <li>
+                                <a href="<?= base_url('outlayanan-madrasah/' . $item['layanan_id']) ?>">
+                                    <?= esc($item['header']) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
             </ul>
           </li>
-          <li><a href="news.html">Zona Integritas</a></li>
+          <li class="dropdown"><a href="<?= base_url('home') ?>"><span>Zona Integritas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href=""><span>Akuntabilitas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>    
+              <li><a href="<?= base_url('outlaporan-kinerja') ?>">Laporan Kinerja</a></li>
+              <li><a href="<?= base_url('outperkin') ?>">Perkin</a></li>
+              </ul>
+              <li>
+              <li><a href="<?= base_url('outrelasi-belanja') ?>">Realisasi Belanja</a></li>
+              <li><a href="<?= base_url('outlima-budaya') ?>">5 Budaya Kerja Kementrian</a></li>
+              <li><a href="<?= base_url('outzona-integrasi') ?>">Zona Integritas - Eviden</a></li>
+              <li class="dropdown">
+    <a href="<?= base_url('outzona-integrasi') ?>">Pelayanan Public<i class="bi bi-chevron-down toggle-dropdown"></i></a> 
+    <?php if (!empty($layanan_public)) : ?>
+        <ul>
+            <?php foreach ($layanan_public as $item) : ?>
+                <li>
+                    <a href="<?= base_url('outlayanan-public/' . $item['layanan_id']) ?>">
+                        <?= esc($item['header']) ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</li>
+<li class="dropdown">
+    <a href="#">PPID<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+    <?php if (!empty($ppid)) : ?>
+        <ul>
+            <?php foreach ($ppid as $item) : ?>
+                <li>
+                    <a href="<?= base_url('outppid/' . $item['ppid_id']) ?>">
+                        <?= esc($item['header']) ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</li>
+             <li><a href="<?= base_url('outyel-yel') ?>">Yel-Yel dan Jargon</a></li>
+             <li><a href="<?= base_url('outpengendalian-intern') ?>">Sistem Pengendalian Intern Pemerintah</a></li>
+             <li><a href="<?= base_url('outwhistle-blowing') ?>">Whistleblowing System</a></li>
+             <li><a href="<?= base_url('outpengendalian-gratifikasi') ?>">Pengendalian Gratifikasi</a></li>
+            </ul>
+          </li>
           <li class="dropdown"><a href="#"><span>PTSP</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="<?= base_url('outtracat') ?>">TRACAT</a></li>
                   <li><a href="<?= base_url('outmaklumat-layanan') ?>">Maklumat Layanan</a></li>
-                  <li><a href="<?= base_url('outmaklumat-layanan') ?>">Alur Pelayanan Tamu</a></li>
+                  <li><a href="<?= base_url('outalur-tamu') ?>">Alur Pelayanan Tamu</a></li>
+                  <li><a href="<?= base_url('outalur-penelitian') ?>">Alur Izin Penelitian</a></li>
+                  <li><a href="<?= base_url('outalur-penelitian') ?>">Legalisasi Dokumen</a></li>
+                  <li><a href="<?= base_url('outpeminjaman-barang') ?>">Peminjaman/Pengembalian Barang</a></li>
+                  <li><a href="<?= base_url('outmutasi-siswa') ?>">Mutasi Siswa</a></li>
+                  <li><a href="<?= base_url('outsurvey-kepuasan') ?>">Survei Kepuasan Masyarakat</a></li>
                 </ul>
           </li>
           <li class="dropdown"><a href="#"><span>PPDB</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>

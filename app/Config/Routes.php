@@ -36,7 +36,27 @@ $routes->get('/agen-perubahan/(:any)', 'AgenPerubahan::detail/$1');
 $routes->get('/outppdb', 'OutPpdb::index');
 $routes->get('/outtracat', 'OutTracat::index');
 $routes->get('/outmaklumat-layanan', 'OutMaklumatLayanan::index');
-
+$routes->get('/outalur-tamu', 'OutAlurTamu::index');
+$routes->get('/outpeminjaman-barang', 'OutPeminjamanBarang::index');
+$routes->get('/outmutasi-siswa', 'OutMutasiSiswa::index');
+$routes->get('/outsurvey-kepuasan', 'OutSurveyKepuasan::index');
+$routes->get('/outsurvey-kepuasan/(:num)', 'OutSurveyKepuasan::detail/$1');
+$routes->get('/outlaporan-kinerja', 'OutLaporanKinerja::index');
+$routes->get('/outperkin', 'OutPerkin::index');
+$routes->get('/outrelasi-belanja', 'OutRelasiBelanja::index');
+$routes->get('/outlima-budaya', 'OutLimaBudaya::index');
+$routes->get('/outzona-integrasi', 'OutZonaIntegrasi::index');
+$routes->get('outlayanan-public/(:num)', 'LayananPublic::detail/$1');
+$routes->get('outppid/(:num)', 'Ppid::detail/$1');
+$routes->get('/outyel-yel', 'OutYelYel::index');
+$routes->get('/outpengendalian-intern', 'OutPengendalianIntern::index');
+$routes->get('/outwhistle-blowing', 'OutWhistleBlowing::index');
+$routes->get('/outpengendalian-gratifikasi', 'OutPengendalianGratifikasi::index');
+$routes->get('outlayanan-madrasah/(:num)', 'LayananMadrasah::detail/$1');
+$routes->get('outekstrakulikuler/(:num)', 'Ekstrakulikuler::detail/$1');
+$routes->get('outketerampilan/(:num)', 'Keterampilan::detail/$1');
+$routes->get('/outukbm', 'OutUkbm::index');
+$routes->get('/outukbm/(:num)', 'OutUkbm::detail/$1');
 
 
 $routes->get('/', 'Auth::index');
