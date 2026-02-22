@@ -59,4 +59,34 @@ class Menu extends BaseController
         return redirect()->to(base_url('menu'));
 
     }
+
+    public function edit($id)
+{
+    $model = new ProfileHistoryModel();
+    $data  = $model->find($id);
+
+    if (!$data) {
+        return redirect()->to(base_url('menu'));
+    }
+
+    $file = $this->request->getFile('image');
+    $imageName = $data['image'];
+
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+        // hapus file lama
+        if ($imageName && file_exists(ROOTPATH . 'public/uploads/' . $imageName)) {
+            unlink(ROOTPATH . 'public/uploads/' . $imageName);
+        }
+        $imageName = $file->getRandomName();
+        $file->move(ROOTPATH . 'public/uploads', $imageName);
+    }
+
+    $model->update($id, [
+        'image'   => $imageName,
+        'tahun'   => $this->request->getPost('tahun'),
+        'history' => $this->request->getPost('history'),
+    ]);
+
+    return redirect()->to(base_url('menu'));
+}
 }

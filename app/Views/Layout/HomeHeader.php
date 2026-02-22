@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/images/logos/favicon.ico') ?>" />
 
 <!-- Top Logo Bar -->
 <div class="container-fluid d-flex flex-column align-items-center py-2 border-bottom bg-white text-center">
@@ -25,6 +26,7 @@
 
 
 <head>
+  
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Man 1 Mandailing Natal</title>
@@ -32,8 +34,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-    <link href="<?= base_url('assets/images/logos/favicon.ico') ?>" rel="icon">
-    <link href="<?= base_url('assets/images/logos/favicon.ico') ?>" rel="apple-touch-icon">
+  
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -73,13 +74,15 @@
         <ul>
         <li class="dropdown"><a href="<?= base_url('home') ?>"><span>Home</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="about.html">Sambutan Kepala Madrasah</a></li>
+              <li><a href="<?= base_url('out-speach-headmaster') ?>">Sambutan Kepala Madrasah</a></li>
+              <li><a href="<?= base_url('out-video-profile') ?>">Video Profile Madrasah</a></li>
               <li><a href="<?= base_url('sejarah') ?>">Sejarah</a></li>
               <li><a href="<?= base_url('visi-misi') ?>">Visi Misi</a></li>
               <li><a href="<?= base_url('struktur-organisasi') ?>">Struktur Organisasi</a></li>
               <li><a href="<?= base_url('lokasi') ?>">Lokasi</a></li>
               <li><a href="<?= base_url('profil-guru') ?>">Profil Guru</a></li>
               <li><a href="<?= base_url('pendidik') ?>">Tenaga Pendidik</a></li>
+              <li><a href="<?= base_url('out-profile-teacher') ?>">Tenaga Kependidik</a></li>
               <li><a href="<?= base_url('sarana-prasarana') ?>">Sarana Prasarana</a></li>
             </ul>
           </li>
@@ -93,9 +96,23 @@
               <li><a href="<?= base_url('kalender-akademik') ?>">Kalender Akademin</a></li>
               <li><a href="<?= base_url('kom') ?>">KOM</a></li>
               <li><a href="<?= base_url('bimbingan') ?>">Bimbingan Karir dan Study Lanjut</a></li>
-              <li><a href="<?= base_url('kalender-akademik') ?>">Pembelajaran Jarak Jauh</a></li>
-              <li><a href="<?= base_url('kalender-akademik') ?>">PTMT</a></li>
-              <li><a href="<?= base_url('kalender-akademik') ?>">SKS</a></li>
+              <li><a href="<?= base_url('outpjj') ?>">Pembelajaran Jarak Jauh</a></li>
+              <li class="dropdown">
+                <a href="#">PTMT<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+                <?php if (!empty($ptmt)) : ?>
+                    <ul>
+                        <?php foreach ($ptmt as $item) : ?>
+                            <li>
+                                <a href="<?= base_url('outptmt/' . $item['ptmt_id']) ?>">
+                                    <?= esc($item['header']) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+              <li><a href="<?= base_url('outsks') ?>">SKS</a></li>
               <li><a href="<?= base_url('outukbm') ?>">UKBM</a></li>
               </ul>
               <li>
@@ -148,7 +165,7 @@
           </li>
           <li class="dropdown"><a href="<?= base_url('home') ?>"><span>Zona Integritas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li class="dropdown"><a href=""><span>Akuntabilitas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="<?= base_url('home') ?>"><span>Akuntabilitas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>    
               <li><a href="<?= base_url('outlaporan-kinerja') ?>">Laporan Kinerja</a></li>
               <li><a href="<?= base_url('outperkin') ?>">Perkin</a></li>
@@ -192,7 +209,7 @@
              <li><a href="<?= base_url('outpengendalian-gratifikasi') ?>">Pengendalian Gratifikasi</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>PTSP</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="<?= base_url('home') ?>"><span>PTSP</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="<?= base_url('outtracat') ?>">TRACAT</a></li>
                   <li><a href="<?= base_url('outmaklumat-layanan') ?>">Maklumat Layanan</a></li>
@@ -204,10 +221,10 @@
                   <li><a href="<?= base_url('outsurvey-kepuasan') ?>">Survei Kepuasan Masyarakat</a></li>
                 </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>PPDB</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>PMB</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="https://www.ppdb.mansatumandailingnatal.sch.id/">PPDB</a></li>
-                  <li><a href="<?= base_url('outppdb') ?>">Pengumuman PPDB</a></li>
+                  <li><a href="https://www.ppdb.mansatumandailingnatal.sch.id/">PMB</a></li>
+                  <li><a href="<?= base_url('outppdb') ?>">Pengumuman PMB</a></li>
                 </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Agen Perubahan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -251,16 +268,75 @@
   </header>
 
       <!-- Banner Section -->
-<div class="position-relative text-center">
-<img src="<?= base_url('assets2/img/banner.jpeg') ?>"
-     alt="Banner MAN 1 Mandailing Natal"
-     class="img-fluid w-100">
+<!-- Carousel Banner -->
+<div id="bannerCarousel" 
+     class="carousel slide carousel-fade position-relative" 
+     data-bs-ride="carousel" 
+     data-bs-interval="2000">
 
-  <!-- Text inside banner -->
-<div class="position-absolute top-50 start-50 translate-middle text-center">
-  <h2 class="fw-bold mb-0 text-white bg-dark bg-opacity-50 px-3 py-2 rounded">
-    MAN 1 Mandailing Natal
-  </h2>
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="<?= base_url('assets2/img/banner.jpeg') ?>" 
+           class="d-block w-100" 
+           style="height:400px; object-fit:cover;"
+           alt="Banner 1">
+    </div>
+
+    <div class="carousel-item">
+      <img src="<?= base_url('assets2/img/banner2.jpeg') ?>" 
+           class="d-block w-100"
+           style="height:400px; object-fit:cover;"
+           alt="Banner 2">
+    </div>
+
+    <div class="carousel-item active">
+      <img src="<?= base_url('assets2/img/banner3.jpeg') ?>" 
+           class="d-block w-100" 
+           style="height:400px; object-fit:cover;"
+           alt="Banner 3">
+    </div>
+
+  </div>
+
+  <!-- Overlay -->
+  <div class="position-absolute top-50 start-50 translate-middle text-center w-100" style="z-index: 10;">
+
+    <!-- Logo -->
+    <div class="mb-2">
+      <img src="<?= base_url('assets2/img/Logo.png') ?>" height="50">
+      <img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" height="50">
+    </div>
+
+    <!-- Text -->
+    <h2 class="fw-bold text-white bg-dark bg-opacity-50 px-4 py-2 rounded d-inline-block">
+      Selamat Datang di MAN 1 Mandailing Natal
+    </h2>
+
+    <p class="fw-bold mt-2 zona-text">
+  Zona Integritas
+</p>
+
+  </div>
+
 </div>
 
-</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+  .zona-text {
+  font-size: 32px; /* lebih besar */
+  font-weight: 800;
+  color: red;
+
+  /* garis luar putih */
+  -webkit-text-stroke: 1.5px white;
+
+  /* fallback biar tetap keliatan di browser lain */
+  text-shadow: 
+    1px 1px 0 white,
+   -1px 1px 0 white,
+    1px -1px 0 white,
+   -1px -1px 0 white;
+}
+</style>

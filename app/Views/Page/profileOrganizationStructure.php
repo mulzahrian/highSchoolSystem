@@ -70,6 +70,11 @@
                   </td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
+                    <button class="btn btn-warning btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#editOrgModal<?= $row['organization_id'] ?>">
+    Edit
+  </button>
                     <a href="<?= base_url('organization-structure/delete/' . $row['organization_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this image?')">
@@ -120,3 +125,35 @@
     </div>
   </div>
 </div>
+
+<?php foreach ($org_structures as $row): ?>
+<div class="modal fade" id="editOrgModal<?= $row['organization_id'] ?>" tabindex="-1" data-bs-focus="false">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit Organization Structure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form action="<?= base_url('organization-structure/edit/' . $row['organization_id']) ?>" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">File</label>
+            <input type="file" name="image" class="form-control" accept="image/*">
+            <?php if (!empty($row['image'])): ?>
+              <img src="<?= base_url('uploads/organization/' . $row['image']) ?>" width="120" class="img-thumbnail mt-2">
+            <?php endif ?>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<?php endforeach ?>

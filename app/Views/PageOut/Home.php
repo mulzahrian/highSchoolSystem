@@ -1,5 +1,203 @@
+<style>
+.highlight-card-box {
+  position: relative;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
+/* Background Image */
+.highlight-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(30%);
+}
+
+/* Overlay Biru Gradient */
+.highlight-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,123,255,0.85), rgba(0,0,0,0.2));
+}
+
+/* Content */
+.highlight-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 50px;
+  color: #fff;
+}
+
+/* Badge */
+.badge-highlight {
+  background: #fff;
+  color: #007bff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* Title */
+.highlight-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Desc */
+.highlight-content p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.btn-highlight {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-highlight:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .highlight-content {
+    padding: 25px;
+  }
+
+  .highlight-content h2 {
+    font-size: 20px;
+  }
+}
+
+/* Pengumuman */
+
+.announcement-box {
+  margin-top: 30px;
+}
+
+/* Overlay beda warna (biar distinguish dari news) */
+.announcement-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,193,7,0.9), rgba(0,0,0,0.3));
+}
+</style>
+  
+  
   <main class="main">
+
+  <!-- section  -->
+
+  <section id="highlight-card" class="highlight-card section">
+
+  <div class="container">
+    <?php if (!empty($news_highlight)): ?>
+
+      <div class="highlight-card-box">
+
+        <!-- Background Image -->
+        <div class="highlight-bg"
+             style="background-image: url('<?= base_url('uploads/news/' . $news_highlight['thumbnail']) ?>');">
+        </div>
+
+        <!-- Overlay -->
+        <div class="highlight-overlay"></div>
+
+        <!-- Content -->
+        <div class="highlight-content">
+
+          <span class="badge-highlight">Highlight</span>
+
+          <h2>
+            <?= esc($news_highlight['title']) ?>
+          </h2>
+
+          <p>
+            <?= word_limiter(strip_tags($news_highlight['content']), 20) ?>
+          </p>
+
+          <a href="<?= base_url('news/' . $news_highlight['news_id']) ?>"
+             class="btn-highlight">
+            BACA SELENGKAPNYA
+          </a>
+
+        </div>
+
+      </div>
+
+    <?php endif; ?>
+  </div>
+
+</section>
+
+  <!-- section -->
+
+<!--Section pengumuman -->
+<section id="announcement" class="announcement section">
+
+  <div class="container">
+    <?php if (!empty($announcement)): ?>
+
+      <div class="highlight-card-box announcement-box">
+
+        <!-- Background -->
+        <div class="highlight-bg"
+             style="background-image: url('<?= base_url('uploads/announcement/' . $announcement['thumbnail']) ?>');">
+        </div>
+
+        <!-- Overlay (beda warna biar beda vibe) -->
+        <div class="announcement-overlay"></div>
+
+        <!-- Content -->
+        <div class="highlight-content">
+
+          <span class="badge-highlight bg-warning text-dark">
+            Pengumuman <?= esc($announcement['year']) ?>
+          </span>
+
+          <h2>
+            Pengumuman Terbaru
+          </h2>
+
+          <p>
+            <?= word_limiter(strip_tags($announcement['content']), 25) ?>
+          </p>
+
+          <!-- OPTIONAL kalau nanti mau detail page -->
+          <!--
+          <a href="<?= base_url('announcement/' . $announcement['announcement_id']) ?>"
+             class="btn-highlight">
+            Lihat Detail
+          </a>
+          -->
+
+        </div>
+
+      </div>
+
+    <?php endif; ?>
+  </div>
+
+</section>
+
+<!--Section pengumuman -->
     <!-- Hero Section -->
     <section id="hero" class="hero section">
       <div class="hero-wrapper">
@@ -302,6 +500,137 @@
 
     </section><!-- /Recent News Section -->
 
+
+   <!-- section navigasi -->
+<section class="navigation-section py-5">
+  <div class="container">
+
+    <h3 class="section-title mb-4">Navigasi</h3>
+    <p class="section-subtitle mb-4">Akses Fitur Website Lebih Cepat</p>
+
+    <div class="row g-4">
+
+      <!-- Item -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="https://www.ppdb.mansatumandailingnatal.sch.id/" class="nav-card">
+          <i class="bi bi-star" style="font-size:2rem;"></i>
+          <span>SNPBD</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="https://rdm.man1mandailingnatal.sch.id/auth#!/dashboard" class="nav-card">
+          <i class="bi bi-journal-text" style="font-size:2rem;"></i>
+          <span>RAPORT</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="<?= base_url('outtracat') ?>" class="nav-card">
+          <i class="bi bi-box-arrow-in-right" style="font-size:2rem;"></i>
+          <span>PTSP</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="#" class="nav-card">
+          <i class="bi bi-info-circle" style="font-size:2rem;"></i>
+          <span>PPID</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="<?= base_url('outzona-integrasi') ?>" class="nav-card">
+          <i class="bi bi-pencil-square" style="font-size:2rem;"></i>
+          <span>ZONA INTEGRITAS</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="https://rdm.man1mandailingnatal.sch.id/auth#!/dashboard" class="nav-card">
+          <i class="bi bi-exclamation-circle" style="font-size:2rem;"></i>
+          <span>LAPOR</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="<?= base_url('outmutasi-siswa') ?>" class="nav-card">
+          <i class="bi bi-people" style="font-size:2rem;"></i>
+          <span>KESISWAAN</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="<?= base_url('outsks') ?>" class="nav-card">
+          <i class="bi bi-book" style="font-size:2rem;"></i>
+          <span>KURIKULUM</span>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <a href="#" class="nav-card">
+          <i class="bi bi-people-network" style="font-size:2rem;"></i>
+          <span>HUMAS</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* section wrapper */
+.navigation-section {
+  background-color: #04415f; /* biru sekolahan */
+  color: #fff;
+  border-radius: 18px;
+  padding: 40px 20px;
+}
+
+.navigation-section .section-title {
+  font-weight: 700;
+  color: #fff;
+  text-align: left;
+}
+
+.navigation-section .section-subtitle {
+  color: #fff;
+  text-align: left;
+}
+
+/* card styling */
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 25px 15px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+  min-height: 140px; /* bikin semua card rata tinggi */
+  box-sizing: border-box;
+}
+
+.nav-card i {
+  display: block;
+}
+
+/* hover effect */
+.nav-card:hover {
+  background-color: #fff;
+  color: #04415f;
+  text-decoration: none;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+</style>
   </main>
 
   <footer id="footer" class="footer position-relative light-background">

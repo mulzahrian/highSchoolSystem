@@ -71,6 +71,11 @@
         <td><?= esc($row['content']) ?></td>
         <td><?= esc($row['created_at']) ?></td>
         <td>
+          <button class="btn btn-warning btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#editVisionMissionModal<?= $row['id'] ?>">
+    Edit
+  </button>
           <a href="<?= base_url('menu/delete/' . $row['id']) ?>"
              class="btn btn-danger btn-sm"
              onclick="return confirm('Delete this data?')">
@@ -136,6 +141,44 @@
   </div>
 </div>
 
+<?php foreach ($vision_mission as $row): ?>
+<div class="modal fade" id="editVisionMissionModal<?= $row['id'] ?>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit Visi Misi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form action="<?= base_url('vision-mission/edit/' . $row['id']) ?>" method="post">
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label class="form-label">Type</label>
+            <select name="type" class="form-select" required>
+              <option value="visi" <?= $row['type'] === 'visi' ? 'selected' : '' ?>>Visi</option>
+              <option value="misi" <?= $row['type'] === 'misi' ? 'selected' : '' ?>>Misi</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea name="content" class="form-control" rows="6"><?= esc($row['content']) ?></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<?php endforeach ?>
 
 
 

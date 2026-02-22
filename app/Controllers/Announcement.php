@@ -58,4 +58,35 @@ class Announcement extends BaseController
 
         return redirect()->to(base_url('announcement'));
     }
+
+    public function edit($id)
+{
+    $model = new AnnouncementModel();
+    $data  = $model->find($id);
+
+    if (!$data) {
+        return redirect()->to(base_url('announcement'));
+    }
+
+    $file = $this->request->getFile('thumbnail');
+    $thumbnail = $data['thumbnail'];
+
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+        // hapus file lama
+        if ($thumbnail && file_exists('uploads/announcement/' . $thumbnail)) {
+            unlink('uploads/announcement/' . $thumbnail);
+        }
+        $thumbnail = $file->getRandomName();
+        $file->move('uploads/announcement', $thumbnail);
+    }
+
+    $model->update($id, [
+        'year'      => $this->request->getPost('year'),
+        'content'   => $this->request->getPost('content'),
+        'thumbnail' => $thumbnail,
+        'is_active' => $this->request->getPost('is_active') ?? 0
+    ]);
+
+    return redirect()->to(base_url('announcement'));
+}
 }

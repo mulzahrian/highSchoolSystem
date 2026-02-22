@@ -53,4 +53,32 @@ class OrganizationStructure extends BaseController
 
         return redirect()->to(base_url('organization-structure'));
     }
+
+    public function edit($id)
+{
+    $model = new ProfileOrganizationStructureModel();
+    $data  = $model->find($id);
+
+    if (!$data) {
+        return redirect()->to(base_url('organization-structure'));
+    }
+
+    $file = $this->request->getFile('image');
+    $imageName = $data['image'];
+
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+        // hapus file lama
+        if ($imageName && file_exists('uploads/organization/' . $imageName)) {
+            unlink('uploads/organization/' . $imageName);
+        }
+        $imageName = $file->getRandomName();
+        $file->move('uploads/organization', $imageName);
+    }
+
+    $model->update($id, [
+        'image' => $imageName
+    ]);
+
+    return redirect()->to(base_url('organization-structure'));
+}
 }

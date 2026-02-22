@@ -77,6 +77,11 @@
                   <td><?= $row['is_active'] ? 'Active' : 'Inactive' ?></td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
+                    <button class="btn btn-warning btn-sm" 
+                          data-bs-toggle="modal" 
+                          data-bs-target="#editOpeningModal<?= $row['opening_id'] ?>">
+                    Edit
+                  </button>
                     <a href="<?= base_url('opening/delete/' . $row['opening_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this opening?')">
@@ -142,3 +147,52 @@
     </div>
   </div>
 </div>
+
+<?php foreach ($opening as $row): ?>
+<div class="modal fade" id="editOpeningModal<?= $row['opening_id'] ?>" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit Opening</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form action="<?= base_url('opening/edit/' . $row['opening_id']) ?>" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label class="form-label">Header</label>
+            <input type="text" name="header" class="form-control" value="<?= esc($row['header']) ?>" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="file" name="image" class="form-control">
+            <?php if ($row['image']): ?>
+              <img src="<?= base_url('uploads/opening/' . $row['image']) ?>" width="80" class="img-thumbnail mt-2">
+            <?php endif ?>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea name="content" class="form-control" rows="5"><?= esc($row['content']) ?></textarea>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_active" value="1" <?= $row['is_active'] ? 'checked' : '' ?>>
+            <label class="form-check-label">Active</label>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<?php endforeach ?>

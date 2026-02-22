@@ -77,6 +77,11 @@
       <td><?= esc($row['history']) ?></td>
       <td><?= esc($row['created_at']) ?></td>
       <td>
+        <button class="btn btn-warning btn-sm" 
+          data-bs-toggle="modal" 
+          data-bs-target="#editHistoryModal<?= $row['history_id'] ?>">
+    Edit
+  </button>
         <a href="<?= base_url('menu/delete/' . $row['history_id']) ?>"
            class="btn btn-danger btn-sm"
            onclick="return confirm('Delete this data?')">
@@ -141,6 +146,49 @@
   </div>
 </div>
 
+<?php foreach ($history as $row): ?>
+<div class="modal fade" id="editHistoryModal<?= $row['history_id'] ?>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit History</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form action="<?= base_url('menu/edit/' . $row['history_id']) ?>" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="file" name="image" class="form-control">
+            <?php if (!empty($row['image'])): ?>
+              <img src="<?= base_url('uploads/' . $row['image']) ?>" width="80" class="img-thumbnail mt-2">
+            <?php endif ?>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Tahun</label>
+            <input type="text" name="tahun" class="form-control" value="<?= esc($row['tahun']) ?>">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">History</label>
+            <textarea name="history" class="form-control" rows="6"><?= esc($row['history']) ?></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<?php endforeach ?>
 
 
 

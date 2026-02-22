@@ -57,7 +57,20 @@ $routes->get('outekstrakulikuler/(:num)', 'Ekstrakulikuler::detail/$1');
 $routes->get('outketerampilan/(:num)', 'Keterampilan::detail/$1');
 $routes->get('/outukbm', 'OutUkbm::index');
 $routes->get('/outukbm/(:num)', 'OutUkbm::detail/$1');
-
+$routes->get('/outsks', 'OutSks::index');
+$routes->get('/outsks/(:num)', 'OutSks::detail/$1');
+$routes->get('outptmt/(:num)', 'Ptmt::detail/$1');
+$routes->get('/outpjj', 'OutPembelajaranJarakJauh::index');
+$routes->get('/outpjj/(:num)', 'OutPembelajaranJarakJauh::detail/$1');
+$routes->get('/out-profile-teacher', 'OutProfileTeacher::index');
+$routes->get('/out-video-profile', 'OutVideoProfile::index');
+$routes->get('/out-speach-headmaster', 'OutSpeachHeadmaster::index');
+$routes->post('/opening/edit/(:num)', 'Opening::edit/$1');
+$routes->post('/menu/edit/(:num)', 'Menu::edit/$1');
+$routes->post('/vision-mission/edit/(:num)', 'VisionMission::edit/$1');
+$routes->post('/organization-structure/edit/(:num)', 'OrganizationStructure::edit/$1');
+$routes->post('/news/edit/(:num)', 'News::edit/$1');
+$routes->post('/announcement/edit/(:num)', 'Announcement::edit/$1');
 
 $routes->get('/', 'Auth::index');
 $routes->get('/auth', 'Auth::index');
@@ -282,6 +295,16 @@ $routes->get('galeri', 'Galeri::index');
 $routes->post('galeri/add', 'Galeri::add');
 $routes->post('galeri/update/(:num)', 'Galeri::update/$1');
 $routes->get('galeri/delete/(:num)', 'Galeri::delete/$1');
+
+$routes->get('video-profile', 'VideoProfile::index');
+$routes->post('video-profile/add', 'VideoProfile::add');
+$routes->post('video-profile/update/(:num)', 'VideoProfile::update/$1');
+$routes->get('video-profile/delete/(:num)', 'VideoProfile::delete/$1');
+
+$routes->get('speach-headmaster', 'SpeachHeadmaster::index');
+$routes->post('speach-headmaster/add', 'SpeachHeadmaster::add');
+$routes->post('speach-headmaster/update/(:num)', 'SpeachHeadmaster::update/$1');
+$routes->get('speach-headmaster/delete/(:num)', 'SpeachHeadmaster::delete/$1');
 
 
 

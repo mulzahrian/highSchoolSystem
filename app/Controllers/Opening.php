@@ -59,4 +59,35 @@ class Opening extends BaseController
 
         return redirect()->to(base_url('opening'));
     }
+
+    public function edit($id)
+{
+    $model = new OpeningModel();
+    $data  = $model->find($id);
+
+    if (!$data) {
+        return redirect()->to(base_url('opening'));
+    }
+
+    $file  = $this->request->getFile('image');
+    $image = $data['image'];
+
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+        // hapus gambar lama
+        if ($image && file_exists('uploads/opening/' . $image)) {
+            unlink('uploads/opening/' . $image);
+        }
+        $image = $file->getRandomName();
+        $file->move('uploads/opening', $image);
+    }
+
+    $model->update($id, [
+        'header'    => $this->request->getPost('header'),
+        'content'   => $this->request->getPost('content'),
+        'image'     => $image,
+        'is_active' => $this->request->getPost('is_active') ?? 0
+    ]);
+
+    return redirect()->to(base_url('opening'));
+}
 }

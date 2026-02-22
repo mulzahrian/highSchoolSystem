@@ -61,6 +61,13 @@ class Home extends BaseController
             ->orderBy('news_id', 'DESC')
             ->findAll(6); // bebas, 4 / 6 / 8 sesuai layout
 
+        $announcementModel = new \App\Models\AnnouncementModel();
+
+        $data['announcement'] = $announcementModel
+            ->where('is_active', 1)
+            ->orderBy('announcement_id', 'DESC')
+            ->first();
+
 
         return view('Layout/HomeHeader')
             . view('Layout/HomeFooter')

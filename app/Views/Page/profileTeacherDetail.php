@@ -79,6 +79,11 @@
                   <td><?= esc($row['level']) ?></td>
                   <td><?= esc($row['role']) ?></td>
                   <td>
+                    <button class="btn btn-warning btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#editModal">
+    Edit
+  </button>
                     <a href="<?= base_url('profile-teacher-detail/delete/' . $row['teacher_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this data?')">

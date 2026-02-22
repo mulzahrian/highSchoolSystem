@@ -12,6 +12,8 @@ use App\Models\PpidModel;
 use App\Models\LayananMadrasahModel;
 use App\Models\EkstrakulikulerModel;
 use App\Models\KeterampilanModel;
+use App\Models\PtmtModel;
+
 
 abstract class BaseController extends Controller
 {
@@ -19,6 +21,7 @@ abstract class BaseController extends Controller
     protected $layanan_madrasah;
     protected $ekstrakulikuler;
     protected $keterampilan;
+    protected $ptmt;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -80,5 +83,14 @@ abstract class BaseController extends Controller
             ->findAll();
 
         service('renderer')->setVar('keterampilan', $this->keterampilan);
+
+        $modelPtmt = new PtmtModel();
+
+        $this->ptmt = $modelPtmt
+            ->where('is_active', 1)
+            ->orderBy('created_at', 'DESC')
+            ->findAll();
+
+        service('renderer')->setVar('ptmt', $this->ptmt);
     }
 }

@@ -31,4 +31,21 @@ class VisionMission extends BaseController
 
         return redirect()->to(base_url('vision-mission'));
     }
+
+    public function edit($id)
+{
+    $model = new ProfileVisionMissionModel();
+    $data  = $model->find($id);
+
+    if (!$data) {
+        return redirect()->to(base_url('vision-mission'));
+    }
+
+    $model->update($id, [
+        'type'    => $this->request->getPost('type'),
+        'content' => $this->request->getPost('content'),
+    ]);
+
+    return redirect()->to(base_url('vision-mission'));
+}
 }

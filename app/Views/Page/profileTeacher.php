@@ -76,6 +76,12 @@
                   <td><?= esc($row['detail']) ?></td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
+                     <td>
+                    <button class="btn btn-warning btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#editModal">
+    Edit
+  </button>
                     <a href="<?= base_url('profile-teacher/delete/' . $row['organization_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this teacher?')">

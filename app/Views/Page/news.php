@@ -85,6 +85,11 @@
                   <td><?= esc($row['view_count']) ?></td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
+                    <button class="btn btn-warning btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#editNewsModal<?= $row['news_id'] ?>">
+    Edit
+  </button>
                     <a href="<?= base_url('news/delete/' . $row['news_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this news?')">
@@ -159,3 +164,60 @@
     </div>
   </div>
 </div>
+
+<?php foreach ($news as $row): ?>
+<div class="modal fade" id="editNewsModal<?= $row['news_id'] ?>" tabindex="-1" data-bs-focus="false">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit News</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form action="<?= base_url('news/edit/' . $row['news_id']) ?>" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" value="<?= esc($row['title']) ?>" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Type</label>
+            <select name="type" class="form-select" required>
+              <option value="highlight" <?= $row['type'] == 'highlight' ? 'selected' : '' ?>>Highlight</option>
+              <option value="normal" <?= $row['type'] == 'normal' ? 'selected' : '' ?>>Normal</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Thumbnail</label>
+            <input type="file" name="thumbnail" class="form-control">
+            <?php if ($row['thumbnail']): ?>
+              <img src="<?= base_url('uploads/news/' . $row['thumbnail']) ?>" width="120" class="img-thumbnail mt-2">
+            <?php endif ?>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea name="content" id="historyEditor<?= $row['news_id'] ?>" class="form-control" rows="6"><?= esc($row['content']) ?></textarea>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_active" value="1" <?= $row['is_active'] ? 'checked' : '' ?>>
+            <label class="form-check-label">Active</label>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<?php endforeach ?>

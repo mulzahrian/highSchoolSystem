@@ -77,6 +77,11 @@
                   <td><?= $row['is_active'] ? 'Active' : 'Inactive' ?></td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
+                    <button class="btn btn-warning btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#editModal<?= $row['announcement_id'] ?>">
+    Edit
+  </button>
                     <a href="<?= base_url('announcement/delete/' . $row['announcement_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this announcement?')">
@@ -142,3 +147,53 @@
     </div>
   </div>
 </div>
+
+
+<?php foreach ($announcements as $row): ?>
+<div class="modal fade" id="editModal<?= $row['announcement_id'] ?>" tabindex="-1" data-bs-focus="false">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit Announcement</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form action="<?= base_url('announcement/edit/' . $row['announcement_id']) ?>" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label class="form-label">Year / Title</label>
+            <input type="text" name="year" class="form-control" value="<?= esc($row['year']) ?>" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Thumbnail</label>
+            <input type="file" name="thumbnail" class="form-control">
+            <?php if ($row['thumbnail']): ?>
+              <img src="<?= base_url('uploads/announcement/' . $row['thumbnail']) ?>" width="120" class="img-thumbnail mt-2">
+            <?php endif ?>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea name="content" id="historyEditor<?= $row['announcement_id'] ?>" class="form-control" rows="6"><?= esc($row['content']) ?></textarea>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_active" value="1" <?= $row['is_active'] ? 'checked' : '' ?>>
+            <label class="form-check-label">Active</label>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<?php endforeach ?>

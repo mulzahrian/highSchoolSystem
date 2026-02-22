@@ -38,9 +38,9 @@
                 </button>
 
                 <div class="d-flex align-items-center justify-content-center">
-                  <a href="<?= base_url('register') ?>" class="text-primary fw-bold ms-2">
+                  <!-- <a href="<?= base_url('register') ?>" class="text-primary fw-bold ms-2">
                     Create an account
-                  </a>
+                  </a> -->
                 </div>
               </form>
               </div>

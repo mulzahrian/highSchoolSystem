@@ -65,4 +65,22 @@ class Ptmt extends BaseController
 
         return redirect()->to(base_url('ptmt'));
     }
+
+    public function detail($id)
+    {
+        $model = new PtmtModel();
+
+        $data['ptmt'] = $model
+            ->where('ptmt_id', $id)
+            ->where('is_active', 1)
+            ->first();
+
+        if (!$data['ptmt']) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        return view('Layout/HomeHeader')
+            . view('PageOut/ptmt_detail', $data)
+            . view('Layout/HomeFooter');
+    }
 }
