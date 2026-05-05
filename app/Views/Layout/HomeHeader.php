@@ -223,7 +223,7 @@
           </li>
           <li class="dropdown"><a href="#"><span>PMB</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="https://www.ppdb.mansatumandailingnatal.sch.id/">PMB</a></li>
+                  <li><a href="https://pmb.man1mandailingnatal.sch.id/">PMB</a></li>
                   <li><a href="<?= base_url('outppdb') ?>">Pengumuman PMB</a></li>
                 </ul>
           </li>

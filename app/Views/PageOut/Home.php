@@ -398,7 +398,7 @@
 </div>
 
 
-          <div class="col-lg-6">
+<div class="col-lg-6">
   <div class="programs-grid">
     <div class="row g-3">
 
@@ -414,7 +414,7 @@
 
             <div class="item-content">
               <h4><?= esc($row['title']) ?></h4>
-              <?= $row['content'] ?>
+              <?= esc(substr(strip_tags($row['content']), 0, 120)) ?>...
             </div>
 
             <div class="item-arrow">
@@ -430,11 +430,8 @@
     </div>
   </div>
 </div>
-
-
-        </div>
-
-      </div>
+</div>
+</div>
 
     </section><!-- /Featured Programs Section -->
 
