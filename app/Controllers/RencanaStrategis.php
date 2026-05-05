@@ -37,4 +37,39 @@ class RencanaStrategis extends BaseController
             . view('PageOut/rencana_strategis_detail', $data)
             . view('Layout/HomeFooter');
     }
+
+    public function update($id)
+{
+    $model = new PlanStrategicModel();
+    $data  = $model->find($id);
+
+    $file = $this->request->getFile('thumbnail');
+
+    $updateData = [
+        'year'      => $this->request->getPost('year'),
+        'content'   => $this->request->getPost('content'),
+        'is_active' => $this->request->getPost('is_active') ? 1 : 0,
+    ];
+
+    // kalau upload thumbnail baru
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+
+        // hapus thumbnail lama
+        if ($data && $data['thumbnail']) {
+            $oldPath = 'uploads/plan_strategic/' . $data['thumbnail'];
+            if (file_exists($oldPath)) {
+                unlink($oldPath);
+            }
+        }
+
+        $newName = $file->getRandomName();
+        $file->move('uploads/plan_strategic', $newName);
+
+        $updateData['thumbnail'] = $newName;
+    }
+
+    $model->update($id, $updateData);
+
+    return redirect()->to(base_url('plan-strategic'));
+}
 }

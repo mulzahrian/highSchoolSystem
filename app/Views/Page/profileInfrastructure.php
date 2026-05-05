@@ -73,11 +73,14 @@
                   <td><?= character_limiter(strip_tags($row['detail']), 100) ?></td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
-                    <button class="btn btn-warning btn-sm"
-          data-bs-toggle="modal"
-          data-bs-target="#editModal">
-    Edit
-  </button>
+                    <button class="btn btn-warning btn-sm btn-edit"
+    data-id="<?= $row['infrastructure_id'] ?>"
+    data-header="<?= esc($row['header']) ?>"
+    data-detail="<?= esc($row['detail']) ?>"
+    data-bs-toggle="modal"
+    data-bs-target="#editModal">
+  Edit
+</button>
                     <a href="<?= base_url('profile-infrastructure/delete/' . $row['infrastructure_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this data?')">
@@ -140,3 +143,62 @@
     </div>
   </div>
 </div>
+
+<!-- MODAL EDIT -->
+<div class="modal fade" id="editModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit Infrastructure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form id="editForm" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+
+          <input type="hidden" name="id" id="editId">
+
+          <div class="mb-3">
+            <label class="form-label">Image (optional)</label>
+            <input type="file" name="image" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Header</label>
+            <input type="text" name="header" id="editHeader" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Detail</label>
+            <textarea name="detail" id="editDetail" class="form-control" rows="6"></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.btn-edit').forEach(button => {
+  button.addEventListener('click', function () {
+    const id = this.dataset.id;
+    const header = this.dataset.header;
+    const detail = this.dataset.detail;
+
+    document.getElementById('editId').value = id;
+    document.getElementById('editHeader').value = header;
+    document.getElementById('editDetail').value = detail;
+
+    // set action form dynamically
+    document.getElementById('editForm').action = "<?= base_url('profile-infrastructure/update/') ?>" + id;
+  });
+});
+</script>

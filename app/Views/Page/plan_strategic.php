@@ -77,11 +77,15 @@
                   <td><?= $row['is_active'] ? 'Active' : 'Inactive' ?></td>
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
-                    <button class="btn btn-warning btn-sm"
-          data-bs-toggle="modal"
-          data-bs-target="#editModal">
-    Edit
-  </button>
+                    <button class="btn btn-warning btn-sm btn-edit"
+    data-id="<?= $row['plan_id'] ?>"
+    data-year="<?= esc($row['year']) ?>"
+    data-content="<?= esc($row['content']) ?>"
+    data-active="<?= $row['is_active'] ?>"
+    data-bs-toggle="modal"
+    data-bs-target="#editModal">
+  Edit
+</button>
                     <a href="<?= base_url('plan-strategic/delete/' . $row['plan_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this plan?')">
@@ -147,3 +151,74 @@
     </div>
   </div>
 </div>
+
+<!-- MODAL EDIT -->
+<div class="modal fade" id="editModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold">Edit Plan Strategic</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <form id="editForm" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+
+          <input type="hidden" id="editId">
+
+          <div class="mb-3">
+            <label class="form-label">Year</label>
+            <input type="text" name="year" id="editYear" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Thumbnail (optional)</label>
+            <input type="file" name="thumbnail" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Content</label>
+            <textarea name="content" id="editContent" class="form-control" rows="6"></textarea>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="editActive" name="is_active" value="1">
+            <label class="form-check-label">Active</label>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.btn-edit').forEach(button => {
+  button.addEventListener('click', function () {
+
+    const id      = this.dataset.id;
+    const year    = this.dataset.year;
+    const content = this.dataset.content;
+    const active  = this.dataset.active;
+
+    document.getElementById('editId').value = id;
+    document.getElementById('editYear').value = year;
+    document.getElementById('editContent').value = content;
+
+    // checkbox
+    document.getElementById('editActive').checked = active == 1;
+
+    // set action form
+    document.getElementById('editForm').action =
+      "<?= base_url('plan-strategic/update/') ?>" + id;
+  });
+});
+</script>

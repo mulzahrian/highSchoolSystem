@@ -77,11 +77,16 @@
                   <td><?= esc($row['created_at']) ?></td>
                   <td>
                      <td>
-                    <button class="btn btn-warning btn-sm"
-          data-bs-toggle="modal"
-          data-bs-target="#editModal">
-    Edit
-  </button>
+                    <button 
+  class="btn btn-warning btn-sm btn-edit"
+  data-id="<?= $row['organization_id'] ?>"
+  data-name="<?= $row['name'] ?>"
+  data-role="<?= $row['role'] ?>"
+  data-detail="<?= $row['detail'] ?>"
+  data-bs-toggle="modal"
+  data-bs-target="#editModal">
+  Edit
+</button>
                     <a href="<?= base_url('profile-teacher/delete/' . $row['organization_id']) ?>"
                        class="btn btn-danger btn-sm"
                        onclick="return confirm('Delete this teacher?')">
@@ -149,3 +154,69 @@
     </div>
   </div>
 </div>
+
+
+<!-- MODAL EDIT -->
+<div class="modal fade" id="editModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <form id="editForm" method="post" enctype="multipart/form-data">
+        <div class="modal-header">
+          <h5>Edit Teacher</h5>
+        </div>
+
+        <div class="modal-body">
+
+          <input type="hidden" name="id" id="editId">
+
+          <div class="mb-3">
+            <label>Name</label>
+            <input type="text" name="name" id="editName" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label>Role</label>
+            <input type="text" name="role" id="editRole" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label>Detail</label>
+            <textarea name="detail" id="editDetail" class="form-control"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label>Photo</label>
+            <input type="file" name="image" class="form-control">
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.btn-edit').forEach(button => {
+  button.addEventListener('click', function () {
+    const id = this.dataset.id;
+    const name = this.dataset.name;
+    const role = this.dataset.role;
+    const detail = this.dataset.detail;
+
+    document.getElementById('editId').value = id;
+    document.getElementById('editName').value = name;
+    document.getElementById('editRole').value = role;
+    document.getElementById('editDetail').value = detail;
+
+    document.getElementById('editForm').action = 
+      "<?= base_url('profile-teacher/update/') ?>" + id;
+  });
+});
+</script>

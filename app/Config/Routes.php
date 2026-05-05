@@ -99,6 +99,7 @@ $routes->get('organization-structure/delete/(:num)', 'OrganizationStructure::del
 $routes->get('profile-teacher', 'ProfileTeacher::index');
 $routes->post('profile-teacher/add', 'ProfileTeacher::add');
 $routes->get('profile-teacher/delete/(:num)', 'ProfileTeacher::delete/$1');
+$routes->post('profile-teacher/update/(:num)', 'ProfileTeacher::update/$1');
 
 $routes->get('profile-location', 'ProfileLocation::index');
 $routes->post('profile-location/add', 'ProfileLocation::add');
@@ -111,6 +112,7 @@ $routes->get('profile-teacher-detail/delete/(:num)', 'ProfileTeacherDetail::dele
 $routes->get('profile-infrastructure', 'ProfileInfrastructure::index');
 $routes->post('profile-infrastructure/add', 'ProfileInfrastructure::add');
 $routes->get('profile-infrastructure/delete/(:num)', 'ProfileInfrastructure::delete/$1');
+$routes->post('profile-infrastructure/update/(:num)', 'ProfileInfrastructure::update/$1');
 
 $routes->get('news', 'News::index');
 $routes->post('news/add', 'News::add');
@@ -119,6 +121,7 @@ $routes->get('news/delete/(:num)', 'News::delete/$1');
 $routes->get('plan-strategic', 'PlanStrategic::index');
 $routes->post('plan-strategic/add', 'PlanStrategic::add');
 $routes->get('plan-strategic/delete/(:num)', 'PlanStrategic::delete/$1');
+$routes->post('plan-strategic/update/(:num)', 'PlanStrategic::update/$1');
 
 $routes->get('announcement', 'Announcement::index');
 $routes->post('announcement/add', 'Announcement::add');
@@ -305,6 +308,11 @@ $routes->get('speach-headmaster', 'SpeachHeadmaster::index');
 $routes->post('speach-headmaster/add', 'SpeachHeadmaster::add');
 $routes->post('speach-headmaster/update/(:num)', 'SpeachHeadmaster::update/$1');
 $routes->get('speach-headmaster/delete/(:num)', 'SpeachHeadmaster::delete/$1');
+
+$routes->get('user', 'User::index');
+$routes->post('user/add', 'User::add');
+$routes->post('user/update/(:num)', 'User::update/$1');
+$routes->get('user/delete/(:num)', 'User::delete/$1');
 
 
 

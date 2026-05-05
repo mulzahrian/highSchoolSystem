@@ -55,4 +55,38 @@ class ProfileInfrastructure extends BaseController
 
         return redirect()->to(base_url('profile-infrastructure'));
     }
+
+    public function update($id)
+{
+    $model = new ProfileInfrastructureModel();
+    $data  = $model->find($id);
+
+    $file = $this->request->getFile('image');
+
+    $updateData = [
+        'header' => $this->request->getPost('header'),
+        'detail' => $this->request->getPost('detail'),
+    ];
+
+    // kalau upload gambar baru
+    if ($file && $file->isValid() && !$file->hasMoved()) {
+
+        // hapus gambar lama
+        if ($data && $data['image']) {
+            $oldPath = 'uploads/infrastructure/' . $data['image'];
+            if (file_exists($oldPath)) {
+                unlink($oldPath);
+            }
+        }
+
+        $newName = $file->getRandomName();
+        $file->move('uploads/infrastructure', $newName);
+
+        $updateData['image'] = $newName;
+    }
+
+    $model->update($id, $updateData);
+
+    return redirect()->to(base_url('profile-infrastructure'));
+}
 }
